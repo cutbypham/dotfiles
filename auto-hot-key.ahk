@@ -13,17 +13,21 @@ CoordMode, Mouse, Screen
 ;#InstallKeybdHook
 ;KeyHistory
 
-printscreen::f14
-insert::f15
-delete::f16
-home::f17
-end::f18
-pgup::f19
-pgdn::f20
-left::f21
-up::f22
-down::f23
-right::f24
+#o::suspend
+insert::f14
+delete::f15
+home::f16
+end::f17
+pgup::f18
+pgdn::f19
+left::f20
+up::f21
+down::f22
+right::f23
+!#m::f24
+
+#wheeldown::volume_up
+#wheelup::volume_down
 
 ^f14::
 DllCall("PowrProf\SetSuspendState", "Int", 0, "Int", 0, "Int", 0)
@@ -39,54 +43,88 @@ sc056::rcontrol
 
 appskey::rcontrol
 
-#wheeldown::volume_up
-#wheelup::volume_down
-
 numpadenter::f14
 
 #include, %a_scriptdir%\lib\timelineclick.ahk
-#include, %a_scriptdir%\lib\snippets.ahk
+;#include, %a_scriptdir%\lib\snippets.ahk
 
 #ifwinactive, ahk_exe onecommander.exe
 !s::send ^{tab}
 !w::send ^+{tab}
+f1::
+send {mbutton}
+sleep 50
+send ^+c
+sleep 50
+send #4
+sleep 50
+send ^+t
+sleep 150
+send useby
+sleep 200
+send {enter}
+sleep 50
+return
 #ifwinactive
 
 #ifwinactive, ahk_exe resolve.exe
 f13:: ;change hotkey to desired hotkey
-   timelineclick(["\imagesearch\resolve\editpage.png", "\imagesearch\resolve\fairlight.png",  "\imagesearch\resolve\cutpage.png"], [75,63,45])
+   timelineclick(["\imagesearch\resolve\editpage.png", "\imagesearch\resolve\fairlight.png",  "\imagesearch\resolve\cutpage.png"], [70,63,45])
 return
-WheelUp::
-Send , {Left}
-Return
+#!m::
+   timelineclick(["\imagesearch\resolve\editpage.png", "\imagesearch\resolve\fairlight.png",  "\imagesearch\resolve\cutpage.png"], [70,63,45])
+return
+`; & d::
+send +v
+send {del}
+return
+`; & j::
+send +v
+send ^+,
+return
+`; & l::
+send +v
+send ^+.
+return
+`; & 3::
+send m
+send {esc}
+send {del}
+return
+
+`;::send  {;}
++`;::send +{;}
+!`;::send !{;}
+#`;::send #{;}
 #ifwinactive
 
-#ifwinactive ahk_exe zen.exe
+#ifwinactive ahk_exe chrome.exe
+#!m::send {Browser_Back}
+#!n::send {Browser_forward}
 f1::^+t
 f2::^w
 f3::
 send ^c
-sleep, 50
+sleep 50
 send ^t
-sleep, 50
+sleep 50
 send ^v
 send {enter}
 return
 f4::
 send ^c
-sleep, 50
+sleep 50
 send ^t
-sleep, 50
+sleep 50
 send y{space}
 send ^v
-sleep, 50
+sleep 50
 send {enter}
 return
 ^o::^+a
+f13::^+a
 !w::send ^{pgup}
 !s::send ^{pgdn}
-f13::send ^t
-f7::^+b
 #ifwinactive
 
 #ifwinactive ahk_exe windowsterminal.exe
@@ -192,16 +230,10 @@ tab & 3::run, "E:\phone\Camera\Camera"
 tab::tab
 
 space & ,::pgup
-space & -::volume_down
-space & =::volume_up
 space & [::send !{left}
 space & ]::send !{right}
-space & `::send ^{wheelup}
 space & b::browser_back
-space & c::#Tab
 space & d::bs
-space & e::down
-space & esc::send !{f4}
 space & h::left
 space & i::home
 space & j::down
@@ -211,15 +243,26 @@ space & m::pgdn
 space & n::^t
 space & o::end
 space & p::send ^{pgdn}
-space & q::left
-space & r::right
-space & tab::send ^{wheeldown}
 space & u::send ^{pgup}
-space & v::send #!+v
-space & w::up
+space & v::send #v
 space & x::del
 space & z::^z
 space & g::#tab
+
+space & e::up
+space & q::left
+space & r::right
+space & w::down
+
+
+space & +::volume_up
+space & -::volume_down
+
+space & `::home
+space & tab::
+send {mbutton}
+send !{f4}
+return
 
 space & f13::
 movingwindowtootherdisplay()
@@ -246,20 +289,3 @@ space::send  {space}
 #space::send #{space}
 ^space::send ^{space}
 
-`; & d::
-send +v
-send {del}
-return
-`; & j::
-send +v
-send ^+,
-return
-`; & l::
-send +v
-send ^+.
-return
-
-`;::send  {;}
-+`;::send +{;}
-!`;::send !{;}
-#`;::send #{;}
