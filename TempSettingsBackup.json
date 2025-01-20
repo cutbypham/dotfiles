@@ -8,12 +8,12 @@
         "ConcurrentJobs": "16",
         "HideOnClose": "True",
         "KeepFolderDate": "True",
-        "ShowJobDetailsPane": "True",
+        "ShowJobDetailsPane": "False",
         "TaskbarDisplayEnabled": "True",
         "TaskmasterMode": "update",
         "ThemeName": "Dark",
         "WindowExpandedWidth": "800",
-        "WindowPlacement": "{\"length\":44,\"flags\":0,\"showCmd\":1,\"ptMinPosition\":\"-1, -1\",\"ptMaxPosition\":\"-1, -1\",\"rcNormalPosition\":\"626, 310, 1426, 530\"}"
+        "WindowPlacement": "{\"length\":44,\"flags\":0,\"showCmd\":1,\"ptMinPosition\":\"-1, -1\",\"ptMaxPosition\":\"-1, -1\",\"rcNormalPosition\":\"594, 317, 974, 599\"}"
       }
     },
     "roaming": {
