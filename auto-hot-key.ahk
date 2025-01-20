@@ -98,7 +98,7 @@ return
 #`;::send #{;}
 #ifwinactive
 
-#ifwinactive ahk_exe chrome.exe
+#ifwinactive ahk_exe firefox.exe
 #!m::send {Browser_Back}
 #!n::send {Browser_forward}
 f1::^+t
