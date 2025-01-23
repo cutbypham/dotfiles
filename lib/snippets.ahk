@@ -8,6 +8,11 @@ clipboard = cutbypham@gmail.com
 send ^+v
 return
 
+:?*:,e::
+clipboard = cutbypham@gmail.com
+send ^+v
+return
+
 :?*:,w::
 clipboard = https://cutbypham.pages.dev
 send ^+v
@@ -41,11 +46,4 @@ return
 :?*:,ph::
 clipboard = 0765650452
 send ^+v
-return
-
-:?*:,g::
-text := "I want you to act as an spelling corrector and improver"
-clipboard := text
-send ^+v
-send {enter}
 return
