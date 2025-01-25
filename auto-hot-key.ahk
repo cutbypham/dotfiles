@@ -244,7 +244,7 @@ space & n::^t
 space & o::end
 space & p::send ^{pgdn}
 space & u::send ^{pgup}
-space & v::send #v
+space & v::send !+^v
 space & x::del
 space & z::^z
 space & g::#tab
