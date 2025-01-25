@@ -1,4 +1,6 @@
+#Persistent
 #keyhistory
+;KeyHistory
 #noenv
 #singleinstance force
 #installmousehook
@@ -8,10 +10,6 @@ listlines off
 sendmode input
 setworkingdir %a_scriptdir%
 CoordMode, Mouse, Screen
-
-;#Persistent
-;#InstallKeybdHook
-;KeyHistory
 
 #o::suspend
 insert::f14
@@ -25,6 +23,33 @@ up::f21
 down::f22
 right::f23
 !#m::f24
+
+f15::
+send #^v
+sleep 200
+send {enter}
+send {esc}
+return
+
+f16::
+send #^v
+sleep 200
+send {down}
+sleep 100
+send {enter}
+send {esc}
+return
+
+f17::
+send #^v
+sleep 200
+send {down}
+sleep 100
+send {down}
+sleep 100
+send {enter}
+send {esc}
+return
 
 #wheeldown::volume_up
 #wheelup::volume_down
@@ -42,8 +67,6 @@ Return
 sc056::rcontrol
 
 appskey::rcontrol
-
-numpadenter::f14
 
 #include, %a_scriptdir%\lib\timelineclick.ahk
 #include, %a_scriptdir%\lib\snippets.ahk
