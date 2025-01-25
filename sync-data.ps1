@@ -5,34 +5,8 @@ function auto-git-commit() {
     git push
 }
 
-function Create-MusicPlaylist {
-    param (
-        [string]$PlaylistName = "nulloy.m3u",
-        [string[]]$Extensions = @("*.mp3", "*.wav", "*.flac", "*.m4a")
-    )
-
-    # Get the current directory
-    $currentDir = Get-Location
-
-    # Find audio files in the current folder and subfolders
-    $audioFiles = Get-ChildItem -Path $currentDir -Recurse -Include $Extensions | Sort-Object Name
-
-    # Check if any audio files were found
-    if ($audioFiles.Count -eq 0) {
-        Write-Output "No audio files found in the current folder or its subfolders."
-        return
-    }
-
-    # Create the playlist file
-    $playlistPath = Join-Path $currentDir $PlaylistName
-    $audioFiles.FullName | Set-Content -Path $playlistPath
-
-    Write-Output "Playlist created: $playlistPath"
-}
-
 cd E:\Music\
 spotdl sync https://music.youtube.com/browse/VLPLg3vjVhK1vnYQWB26nwADGqEf2xHzgSZR --save-file data.spotdl  --audio youtube-music --bitrate auto --sponsor-block
-Create-MusicPlaylist
 cd -
 
 cd C:\Users\master\repos\cutbypham\davinci-resolve
