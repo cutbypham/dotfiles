@@ -38,9 +38,9 @@ function edit-powershell-config() { nvim $profile }
 function edit-nvim-config() { nvim C:\Users\master\AppData\Local\nvim\init.lua }
 
 function update-dotfiles() {
-    cp $profile ~\repos\vndmp4\dotfiles\
-    cp C:\Users\master\AppData\Local\nvim\init.lua ~\repos\vndmp4\dotfiles\nvim
-    cd ~\repos\vndmp4\dotfiles\
+    cp $profile ~\repos\cutbypham\dotfiles\
+    cp C:\Users\master\AppData\Local\nvim\init.lua ~\repos\cutbypham\dotfiles\nvim
+    cd ~\repos\cutbypham\dotfiles\
     git add Microsoft.PowerShell_profile.ps1
     git add nvim\init.lua
     git commit -m "pwsh, nvim"
@@ -128,8 +128,8 @@ function download-audio() {
 Set-Alias da download-audio
 
 function sync-music() {
-    cd ~\Music\
-    yt-dlp --extract-audio --continue --add-metadata --embed-thumbnail --audio-format mp3 --audio-quality 0 --metadata-from-title="%(artist)s - %(title)s" --download-archive archive.txt "https://vndmp4.pages.dev/music"
+    cd E:\Music\
+    spotdl sync https://music.youtube.com/browse/VLPLg3vjVhK1vnYQWB26nwADGqEf2xHzgSZR --save-file data.spotdl  --audio youtube-music --bitrate auto --sponsor-block
     cd -
 }
 
