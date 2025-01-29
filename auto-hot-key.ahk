@@ -35,7 +35,7 @@ f16::
 send #^v
 sleep 200
 send {down}
-sleep 100
+sleep 200
 send {enter}
 send {esc}
 return
@@ -44,9 +44,9 @@ f17::
 send #^v
 sleep 200
 send {down}
-sleep 100
+sleep 200
 send {down}
-sleep 100
+sleep 200
 send {enter}
 send {esc}
 return
