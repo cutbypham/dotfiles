@@ -94,9 +94,6 @@ return
 f13:: ;change hotkey to desired hotkey
    timelineclick(["\imagesearch\resolve\editpage.png", "\imagesearch\resolve\fairlight.png",  "\imagesearch\resolve\cutpage.png"], [70,63,45])
 return
-#!m::
-   timelineclick(["\imagesearch\resolve\editpage.png", "\imagesearch\resolve\fairlight.png",  "\imagesearch\resolve\cutpage.png"], [70,63,45])
-return
 `; & d::
 send +v
 send {del}
@@ -122,8 +119,6 @@ return
 #ifwinactive
 
 #ifwinactive ahk_exe firefox.exe
-#!m::send {Browser_Back}
-#!n::send {Browser_forward}
 f1::^+t
 f2::^w
 f3::
@@ -148,6 +143,8 @@ return
 f13::^+a
 !w::send ^{pgup}
 !s::send ^{pgdn}
+space & a::send {browser_back}
+space & s::send {Browser_forward}
 #ifwinactive
 
 #ifwinactive ahk_exe windowsterminal.exe
@@ -255,7 +252,6 @@ tab::tab
 space & ,::pgup
 space & [::send !{left}
 space & ]::send !{right}
-space & b::browser_back
 space & d::bs
 space & h::left
 space & i::home
