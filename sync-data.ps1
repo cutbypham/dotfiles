@@ -5,37 +5,8 @@ function auto-git-commit() {
     git push
 }
 
-# Change to the music directory and sync music from YouTube Music
 cd E:\Music\
 spotdl sync https://music.youtube.com/browse/VLPLg3vjVhK1vnYQWB26nwADGqEf2xHzgSZR --save-file data.spotdl --audio youtube-music --bitrate auto --sponsor-block
-cd -
-
-Write-Host "Music synchronization completed."
-
-# Define the music directory and destination path for the playlist
-$musicDirectory = "E:\Music"
-$destinationPath = "C:\Users\master\AppData\Roaming\Nulloy"
-$playlistFileName = "Nulloy.m3u"
-$playlistPath = Join-Path -Path $destinationPath -ChildPath $playlistFileName
-
-# Ensure the destination path exists
-if (-not (Test-Path $destinationPath)) {
-    New-Item -Path $destinationPath -ItemType Directory -Force
-}
-
-# Remove old playlist file if it exists
-if (Test-Path $playlistPath) {
-    Remove-Item $playlistPath
-}
-
-# Get all MP3 files in the music directory and write to the playlist
-$musicDirInfo = Get-Item $musicDirectory
-$musicDirInfo.GetFiles("*.mp3") |
-ForEach-Object { $_.FullName } |
-Sort-Object |
-Out-File -Encoding UTF8 -FilePath $playlistPath
-
-Write-Host "Created M3U Playlist: $playlistPath"
 
 cd C:\Users\master\repos\cutbypham\davinci-resolve
 auto-git-commit
