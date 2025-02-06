@@ -69,7 +69,7 @@ sc056::rcontrol
 appskey::rcontrol
 
 #include, %a_scriptdir%\lib\timelineclick.ahk
-#include, %a_scriptdir%\lib\snippets.ahk
+;#include, %a_scriptdir%\lib\snippets.ahk
 
 #ifwinactive, ahk_exe onecommander.exe
 !s::send ^{tab}
