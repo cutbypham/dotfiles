@@ -28,6 +28,7 @@ f15::
 send #^v
 sleep 200
 send {enter}
+sleep 200
 send {esc}
 return
 
@@ -37,6 +38,7 @@ sleep 200
 send {down}
 sleep 200
 send {enter}
+sleep 200
 send {esc}
 return
 
@@ -48,6 +50,7 @@ sleep 200
 send {down}
 sleep 200
 send {enter}
+sleep 200
 send {esc}
 return
 
