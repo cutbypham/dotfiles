@@ -26,31 +26,31 @@ right::f23
 
 f15::
 send #^v
-sleep 200
+sleep 300
 send {enter}
-sleep 200
+sleep 300
 send {esc}
 return
 
 f16::
 send #^v
-sleep 200
+sleep 300
 send {down}
-sleep 200
+sleep 300
 send {enter}
-sleep 200
+sleep 300
 send {esc}
 return
 
 f17::
 send #^v
-sleep 200
+sleep 300
 send {down}
-sleep 200
+sleep 300
 send {down}
-sleep 200
+sleep 300
 send {enter}
-sleep 200
+sleep 300
 send {esc}
 return
 
