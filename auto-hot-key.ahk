@@ -1,6 +1,5 @@
-#Persistent
-#keyhistory
 ;KeyHistory
+#Persistent
 #noenv
 #singleinstance force
 #installmousehook
@@ -57,13 +56,13 @@ return
 #wheeldown::volume_up
 #wheelup::volume_down
 
-^f14::
+f18::
 DllCall("PowrProf\SetSuspendState", "Int", 0, "Int", 0, "Int", 0)
 return
-^f15::
+f19::
 Run, shutdown.exe /r /t 0 
 Return
-^f16::
+f23::
 Run, shutdown /s /t 0
 Return
 
