@@ -133,6 +133,54 @@ function sync-music() {
     cd -
 }
 
+function download-youtube-video-to-watch-offline() {
+    mkdir ~\Downloads\YouTube\ > $null 2>&1
+    cd ~\Downloads\YouTube\
+    yt-dlp -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4' (Get-Clipboard)
+    cd -
+}
+function yy() {
+    download-youtube-video-to-watch-offline
+    exit
+}
+
+function GenerateM3U {
+    param(
+        [System.IO.DirectoryInfo] $directory,
+        [string] $destinationPath
+    )
+
+    # Ensure the destination path exists
+    if (-not (Test-Path $destinationPath)) {
+        New-Item -Path $destinationPath -ItemType Directory -Force
+    }
+
+    # Define the playlist file name
+    $playlistFileName = "Nulloy.m3u"
+    $playlistPath = Join-Path -Path $destinationPath -ChildPath $playlistFileName
+
+    # Remove old playlist file if it exists
+    if (Test-Path $playlistPath) {
+        Remove-Item $playlistPath
+    }
+
+    # Get all MP3 files in the directory and write to the playlist
+    $directory.GetFiles("*.mp3") |
+    ForEach-Object { $_.FullName } |
+    Sort-Object |
+    Out-File -Encoding UTF8 -FilePath $playlistPath
+
+    Write-Host "Created M3U Playlist: $playlistPath"
+}
+
+function syncPlaylist {
+    $musicDirectory = "E:\Music"
+    $musicDirInfo = Get-Item $musicDirectory
+
+    $destinationPath = "C:\Users\master\AppData\Roaming\Nulloy"
+    GenerateM3U -directory $musicDirInfo -destinationPath $destinationPath
+}
+
 function ls-mb() {
     ls | Select-Object Name, @{Name="MegaBytes";Expression={$_.Length / 1MB}}
 }
