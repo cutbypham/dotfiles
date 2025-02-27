@@ -56,13 +56,13 @@ return
 #wheeldown::volume_up
 #wheelup::volume_down
 
-f18::
+^f15::
 DllCall("PowrProf\SetSuspendState", "Int", 0, "Int", 0, "Int", 0)
 return
-f19::
+^f16::
 Run, shutdown.exe /r /t 0 
 Return
-f23::
+^f17::
 Run, shutdown /s /t 0
 Return
 
