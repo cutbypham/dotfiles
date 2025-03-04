@@ -96,7 +96,7 @@
     {
         "defaults": 
         {
-            "colorScheme": "Github Light"
+            "colorScheme": "Gruvbox Dark"
         },
         "list": 
         [
@@ -232,7 +232,7 @@
             "yellow": "#E5C07B"
         }
     ],
-    "theme": "light",
+    "theme": "dark",
     "themes": [],
     "windowingBehavior": "useAnyExisting"
 }

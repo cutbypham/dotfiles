@@ -73,7 +73,7 @@ require("lazy").setup({
 })
 
 vim.opt.background = "dark"
-vim.cmd('colorscheme shine')
+vim.cmd('colorscheme retrobox')
 
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>f', builtin.find_files, {})
