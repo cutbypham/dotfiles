@@ -4,6 +4,15 @@
     "actions": 
     [
         {
+            "command": 
+            {
+                "action": "copy",
+                "singleLine": false
+            },
+            "id": "User.copy.644BA8F2",
+            "keys": "ctrl+c"
+        },
+        {
             "command": "unbound",
             "keys": "ctrl+v"
         },
@@ -24,13 +33,8 @@
             "keys": "alt+shift+d"
         },
         {
-            "command": 
-            {
-                "action": "copy",
-                "singleLine": false
-            },
-            "id": "User.copy.644BA8F2",
-            "keys": "ctrl+c"
+            "command": "paste",
+            "id": "User.paste"
         },
         {
             "command": "duplicateTab",
@@ -38,13 +42,17 @@
             "keys": "ctrl+shift+t"
         },
         {
-            "command": "paste",
-            "id": "User.paste"
-        },
-        {
             "command": "find",
             "id": "User.find",
             "keys": "ctrl+shift+f"
+        },
+        {
+            "command": 
+            {
+                "action": "commandPalette"
+            },
+            "id": "User.commandPalette.D3F0B923",
+            "keys": "ctrl+shift+p"
         },
         {
             "command": 
@@ -55,14 +63,6 @@
             },
             "id": "User.splitPane.A6751878",
             "keys": "alt+/"
-        },
-        {
-            "command": 
-            {
-                "action": "commandPalette"
-            },
-            "id": "User.commandPalette.D3F0B923",
-            "keys": "ctrl+shift+p"
         },
         {
             "command": 
@@ -96,7 +96,7 @@
     {
         "defaults": 
         {
-            "colorScheme": "Gruvbox Dark"
+            "colorScheme": "Github Light"
         },
         "list": 
         [
@@ -232,7 +232,7 @@
             "yellow": "#E5C07B"
         }
     ],
-    "theme": "dark",
+    "theme": "light",
     "themes": [],
     "windowingBehavior": "useAnyExisting"
 }
