@@ -37,6 +37,10 @@ function edit-powershell-config() { nvim $profile }
 
 function edit-nvim-config() { nvim C:\Users\master\AppData\Local\nvim\init.lua }
 
+function d() {
+    aria2c --max-connection-per-server=16 --split=10 --enable-http-pipelining=true --max-overall-download-limit=0 --file-allocation=falloc --disk-cache=32M --seed-time=0 "$args"
+}
+
 function update-dotfiles() {
     cp $profile ~\repos\cutbypham\dotfiles\
     cp C:\Users\master\AppData\Local\nvim\init.lua ~\repos\cutbypham\dotfiles\nvim
@@ -123,9 +127,14 @@ Set-Alias dv download-video
 Set-Alias y yt-dlp
 
 function download-audio() {
-    yt-dlp --extract-audio --continue --add-metadata --embed-thumbnail --audio-format mp3 --audio-quality 0 --metadata-from-title="%(artist)s - %(title)s" $args
+    yt-dlp --extract-audio --continue --add-metadata --embed-thumbnail --audio-format mp3 --audio-quality 0 --metadata-from-title="%(artist)s - %(title)s" "$args"
 }
 Set-Alias da download-audio
+
+function download-thumbnail() {
+    yt-dlp --skip-download --write-thumbnail --convert-thumbnails png "$args"
+}
+Set-Alias dt download-thumbnail
 
 function sync-music() {
     cd E:\Music\
@@ -192,6 +201,16 @@ function ls-kb() {
 new-alias grep select-string
 
 new-alias unzip Expand-Archive
+
+Set-PSReadLineOption -EditMode Windows
+$PSDefaultParameterValues['Out-File:NoClobber'] = $true
+function Set-Location {
+    param(
+        [string]$Path
+    )
+    Microsoft.PowerShell.Management\Set-Location $Path
+    Write-Host "`e]9;9;$(Get-Location)`a"
+}
 
 Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
     param($wordToComplete, $commandAst, $cursorPosition)

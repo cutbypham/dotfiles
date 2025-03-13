@@ -149,6 +149,7 @@ vim.api.nvim_command [[command! -nargs=0 EditDataSync edit C:\Users\master\repos
 vim.api.nvim_command [[command! -nargs=0 EditAutoHotkey edit C:\Users\master\repos\cutbypham\dotfiles\auto-hot-key.ahk]]
 vim.api.nvim_command [[command! -nargs=0 EditAutoHotkeySnippets edit C:\Users\master\repos\cutbypham\dotfiles\lib\snippets.ahk]]
 vim.api.nvim_command [[command! -nargs=0 EditFirefoxProfile edit C:\Users\master\AppData\Roaming\Mozilla\Firefox\Profiles\3wr0grx7.default-release\user.js]]
+vim.api.nvim_command [[command! -nargs=0 EditRSS edit C:\Users\master\repos\cutbypham\rss-to-email-once-a-day\src\feeds.ts]]
 
 local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
 
