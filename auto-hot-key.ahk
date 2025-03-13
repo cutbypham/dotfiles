@@ -145,8 +145,8 @@ return
 f13::^+a
 !w::send ^{pgup}
 !s::send ^{pgdn}
-space & a::send {browser_back}
-space & s::send {Browser_forward}
+space & a::send !{Left}
+space & s::send !{Right}
 #ifwinactive
 
 #ifwinactive ahk_exe windowsterminal.exe
