@@ -1,4 +1,4 @@
-;KeyHistory
+;#KeyHistory
 #Persistent
 #noenv
 #singleinstance force
