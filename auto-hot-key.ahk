@@ -41,18 +41,6 @@ sleep 300
 send {esc}
 return
 
-f17::
-send #^v
-sleep 300
-send {down}
-sleep 300
-send {down}
-sleep 300
-send {enter}
-sleep 300
-send {esc}
-return
-
 #wheeldown::volume_up
 #wheelup::volume_down
 
