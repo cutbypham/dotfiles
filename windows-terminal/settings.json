@@ -9,50 +9,22 @@
                 "action": "copy",
                 "singleLine": false
             },
-            "id": "User.copy.644BA8F2",
-            "keys": "ctrl+c"
-        },
-        {
-            "command": "unbound",
-            "keys": "ctrl+v"
-        },
-        {
-            "command": "unbound",
-            "keys": "ctrl+tab"
-        },
-        {
-            "command": "unbound",
-            "keys": "ctrl+shift+tab"
-        },
-        {
-            "command": "unbound",
-            "keys": "ctrl+shift+d"
-        },
-        {
-            "command": "unbound",
-            "keys": "alt+shift+d"
+            "id": "User.copy.644BA8F2"
         },
         {
             "command": "paste",
             "id": "User.paste"
         },
         {
-            "command": "duplicateTab",
-            "id": "User.duplicateTab",
-            "keys": "ctrl+shift+t"
-        },
-        {
-            "command": "find",
-            "id": "User.find",
-            "keys": "ctrl+shift+f"
-        },
-        {
             "command": 
             {
-                "action": "commandPalette"
+                "action": "prevTab"
             },
-            "id": "User.commandPalette.D3F0B923",
-            "keys": "ctrl+shift+p"
+            "id": "User.prevTab.0"
+        },
+        {
+            "command": "duplicateTab",
+            "id": "User.duplicateTab"
         },
         {
             "command": 
@@ -61,30 +33,82 @@
                 "split": "auto",
                 "splitMode": "duplicate"
             },
-            "id": "User.splitPane.A6751878",
-            "keys": "alt+/"
+            "id": "User.splitPane.A6751878"
+        },
+        {
+            "command": "find",
+            "id": "User.find"
+        },
+        {
+            "command": 
+            {
+                "action": "commandPalette"
+            },
+            "id": "User.commandPalette.D3F0B923"
         },
         {
             "command": 
             {
                 "action": "nextTab"
             },
-            "id": "User.nextTab.0",
-            "keys": "ctrl+pgdn"
-        },
-        {
-            "command": 
-            {
-                "action": "prevTab"
-            },
-            "id": "User.prevTab.0",
-            "keys": "ctrl+pgup"
+            "id": "User.nextTab.0"
         }
     ],
     "copyFormatting": "none",
     "copyOnSelect": true,
     "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
     "disableAnimations": true,
+    "keybindings": 
+    [
+        {
+            "id": "User.copy.644BA8F2",
+            "keys": "ctrl+c"
+        },
+        {
+            "id": null,
+            "keys": "ctrl+shift+tab"
+        },
+        {
+            "id": null,
+            "keys": "ctrl+shift+d"
+        },
+        {
+            "id": null,
+            "keys": "ctrl+tab"
+        },
+        {
+            "id": null,
+            "keys": "ctrl+v"
+        },
+        {
+            "id": "User.find",
+            "keys": "ctrl+shift+f"
+        },
+        {
+            "id": null,
+            "keys": "alt+shift+d"
+        },
+        {
+            "id": "User.duplicateTab",
+            "keys": "ctrl+shift+t"
+        },
+        {
+            "id": "User.commandPalette.D3F0B923",
+            "keys": "ctrl+shift+p"
+        },
+        {
+            "id": "User.splitPane.A6751878",
+            "keys": "alt+/"
+        },
+        {
+            "id": "User.nextTab.0",
+            "keys": "ctrl+pgdn"
+        },
+        {
+            "id": "User.prevTab.0",
+            "keys": "ctrl+pgup"
+        }
+    ],
     "launchMode": "maximized",
     "newTabMenu": 
     [
