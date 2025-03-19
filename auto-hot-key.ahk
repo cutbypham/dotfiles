@@ -122,7 +122,7 @@ return
 #`;::send #{;}
 #ifwinactive
 
-#ifwinactive ahk_exe zen.exe
+#ifwinactive ahk_exe firefox.exe
 f1::^+t
 f2::^w
 f3::
