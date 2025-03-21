@@ -10,7 +10,7 @@ sendmode input
 setworkingdir %a_scriptdir%
 CoordMode, Mouse, Screen
 
-PrintScreen::send ^!s
+PrintScreen::send #^c
 
 #o::suspend
 insert::f14
