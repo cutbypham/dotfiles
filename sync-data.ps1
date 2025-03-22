@@ -5,6 +5,10 @@ function auto-git-commit() {
     git push
 }
 
+cd C:\Users\master\repos\cutbypham\rss-to-email-once-a-day\
+auto-git-commit
+cd -
+
 cd E:\Music\
 spotdl sync https://music.youtube.com/browse/VLPLg3vjVhK1vnYQWB26nwADGqEf2xHzgSZR --save-file data.spotdl --audio youtube-music --bitrate auto --sponsor-block
 cd -

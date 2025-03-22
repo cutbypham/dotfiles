@@ -309,6 +309,6 @@ space & f9::reload
 space::send  {space}
 +space::send +{space}
 !space::send !{space}
-#space::send {f14}
+#space::send #{space}
 ^space::send ^{space}
 
