@@ -40,9 +40,6 @@ Out-File -Encoding UTF8 -FilePath $playlistPath
 
 Write-Host "Created M3U Playlist: $playlistPath"
 
-cd C:\Users\master\repos\cutbypham\davinci-resolve
-auto-git-commit
-
 cd C:\Users\master\repos\cutbypham\obs-studio\
 auto-git-commit
 
