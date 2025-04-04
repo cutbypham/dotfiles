@@ -97,6 +97,8 @@ return
 #ifwinactive, ahk_exe resolve.exe
 f13:: ;change hotkey to desired hotkey
    timelineclick(["\imagesearch\resolve\editpage.png", "\imagesearch\resolve\fairlight.png",  "\imagesearch\resolve\cutpage.png"], [70,63,45])
+f7::
+    timelineclick(["\imagesearch\resolve\JogWheel.png"], [20])
 return
 `; & d::
 send +v
