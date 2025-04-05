@@ -104,32 +104,6 @@ SetWorkingDir, %A_ScriptDir%
 CoordMode, Mouse, Screen
 CoordMode, Pixel, Screen
 
-; Hotkey to start the script
-F1::
-    ; Search for the image on the screen
-    ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, JogWheel.png
-
-    ; Check if the image was found
-    if (ErrorLevel = 0) {
-        ; Calculate the center of the image
-        CenterX := FoundX + (posw // 2)
-        CenterY := FoundY + (posh // 2)
-
-        ; Click and hold at the center of the image
-        MouseMove, %CenterX%, %CenterY%
-        Click, Down
-
-        ; Optional: Hold for a certain duration before releasing
-        Sleep, 1000 ; Hold for 1 second
-        Click, Up
-    } else {
-        MsgBox, Image not found.
-    }
-return
-
-; Optional: Hotkey to exit the script
-Esc::ExitApp
-
 #ifwinactive, ahk_exe resolve.exe
 f13:: ;change hotkey to desired hotkey
    timelineclick(["\imagesearch\resolve\editpage.png", "\imagesearch\resolve\fairlight.png",  "\imagesearch\resolve\cutpage.png"], [70,63,45])
@@ -347,4 +321,3 @@ space::send  {space}
 !space::send !{space}
 #space::send #{space}
 ^space::send ^{space}
-
