@@ -108,6 +108,13 @@ CoordMode, Pixel, Screen
 f13:: ;change hotkey to desired hotkey
    timelineclick(["\imagesearch\resolve\editpage.png", "\imagesearch\resolve\fairlight.png",  "\imagesearch\resolve\cutpage.png"], [70,63,45])
 return
+
+#ifwinactive, ahk_exe Sononym.exe
+f13:: ;change hotkey to desired hotkey
+   timelineclick(["\imagesearch\resolve\editpage.png", "\imagesearch\resolve\fairlight.png",  "\imagesearch\resolve\cutpage.png"], [70,63,45])
+return
+
+
 `; & d::
 send +v
 send {del}
