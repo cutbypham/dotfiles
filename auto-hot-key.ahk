@@ -289,10 +289,10 @@ space & x::del
 space & z::^z
 space & g::#tab
 
-space & e::up
+space & e::down
 space & q::left
 space & r::right
-space & w::down
+space & w::up
 
 
 space & +::volume_up
