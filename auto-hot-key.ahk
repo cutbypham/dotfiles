@@ -108,16 +108,6 @@ CoordMode, Pixel, Screen
 f13:: ;change hotkey to desired hotkey
    timelineclick(["\imagesearch\resolve\editpage.png", "\imagesearch\resolve\fairlight.png",  "\imagesearch\resolve\cutpage.png"], [70,63,50])
 return
-#ifwinactive
-
-#ifwinactive, ahk_exe Sononym.exe
-f13:: ;change hotkey to desired hotkey
-   timelineclick(["\imagesearch\resolve\editpage.png", "\imagesearch\resolve\fairlight.png",  "\imagesearch\resolve\cutpage.png"], [70,63,50])
-return
-#ifwinactive
-
-
-#ifwinactive, ahk_exe resolve.exe
 `; & d::
 send +v
 send {del}
@@ -140,6 +130,16 @@ return
 +`;::send +{;}
 !`;::send !{;}
 #`;::send #{;}
+
+space & a::send +4
+space & s::send +6
+space & f::send +7
+#ifwinactive
+
+#ifwinactive, ahk_exe Sononym.exe
+f13:: ;change hotkey to desired hotkey
+   timelineclick(["\imagesearch\resolve\editpage.png", "\imagesearch\resolve\fairlight.png",  "\imagesearch\resolve\cutpage.png"], [70,63,50])
+return
 #ifwinactive
 
 #ifwinactive ahk_exe firefox.exe
@@ -169,6 +169,13 @@ f13::^+a
 !s::send ^{pgdn}
 space & a::send !{Left}
 space & s::send !{Right}
+space & f::
+send ^3
+sleep 200
+send ^i
+sleep 200
+send !i
+return
 #ifwinactive
 
 #ifwinactive ahk_exe windowsterminal.exe
@@ -289,7 +296,6 @@ space & p::send ^{pgdn}
 space & u::send ^{pgup}
 space & v::send !+^v
 space & x::del
-space & z::^z
 space & g::#tab
 
 space & e::down
