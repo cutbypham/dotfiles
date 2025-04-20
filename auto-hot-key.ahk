@@ -166,13 +166,6 @@ f13::^+a
 !s::send ^{pgdn}
 space & a::send !{Left}
 space & s::send !{Right}
-space & f::
-send ^3
-sleep 200
-send ^i
-sleep 200
-send !i
-return
 #ifwinactive
 
 #ifwinactive ahk_exe windowsterminal.exe
