@@ -11,6 +11,9 @@ setworkingdir %a_scriptdir%
 CoordMode, Mouse, Screen
 
 PrintScreen::send #^c
+^PrintScreen::
+DllCall("PowrProf\SetSuspendState", "Int", 0, "Int", 0, "Int", 0)
+return
 
 #o::suspend
 insert::f14
