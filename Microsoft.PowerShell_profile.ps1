@@ -138,7 +138,7 @@ Set-Alias dt download-thumbnail
 
 function sync-music() {
     cd E:\Music\
-    spotdl sync https://music.youtube.com/browse/VLPLg3vjVhK1vnYQWB26nwADGqEf2xHzgSZR --save-file data.spotdl  --audio youtube-music --bitrate auto --sponsor-block
+yt-dlp --cookies-from-browser firefox --download-archive archive.txt --extract-audio --audio-format mp3 --embed-thumbnail --embed-metadata --add-metadata -o "%(title)s.%(ext)s" "https://music.youtube.com/playlist?list=PLg3vjVhK1vnYQWB26nwADGqEf2xHzgSZR"
     cd -
 }
 
@@ -151,43 +151,6 @@ function download-youtube-video-to-watch-offline() {
 function yy() {
     download-youtube-video-to-watch-offline
     exit
-}
-
-function GenerateM3U {
-    param(
-        [System.IO.DirectoryInfo] $directory,
-        [string] $destinationPath
-    )
-
-    # Ensure the destination path exists
-    if (-not (Test-Path $destinationPath)) {
-        New-Item -Path $destinationPath -ItemType Directory -Force
-    }
-
-    # Define the playlist file name
-    $playlistFileName = "Nulloy.m3u"
-    $playlistPath = Join-Path -Path $destinationPath -ChildPath $playlistFileName
-
-    # Remove old playlist file if it exists
-    if (Test-Path $playlistPath) {
-        Remove-Item $playlistPath
-    }
-
-    # Get all MP3 files in the directory and write to the playlist
-    $directory.GetFiles("*.mp3") |
-    ForEach-Object { $_.FullName } |
-    Sort-Object |
-    Out-File -Encoding UTF8 -FilePath $playlistPath
-
-    Write-Host "Created M3U Playlist: $playlistPath"
-}
-
-function syncPlaylist {
-    $musicDirectory = "E:\Music"
-    $musicDirInfo = Get-Item $musicDirectory
-
-    $destinationPath = "C:\Users\master\AppData\Roaming\Nulloy"
-    GenerateM3U -directory $musicDirInfo -destinationPath $destinationPath
 }
 
 function ls-mb() {
