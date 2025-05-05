@@ -7,7 +7,6 @@ function auto-git-commit() {
 
 cd C:\Users\master\repos\cutbypham\rss-to-email-once-a-day\
 auto-git-commit
-cd -
 
 cd C:\Users\master\repos\cutbypham\obs-studio\
 auto-git-commit

@@ -290,12 +290,12 @@ space & u::send ^{pgup}
 space & v::send !+^v
 space & x::del
 space & g::#tab
+space & b::send {enter}
 
 space & e::down
 space & q::left
 space & r::right
 space & w::up
-
 
 space & +::volume_up
 space & -::volume_down
