@@ -169,6 +169,22 @@ f13::^+a
 !s::send ^{pgdn}
 space & a::send !{Left}
 space & s::send !{Right}
+;Click, 1490, 50
+Space & f::
+image := A_ScriptDir "\imagesearch\resolve\onetab.png"
+WinGetPos, winX, winY, winW, winH, A
+CoordMode, Pixel, Screen
+CoordMode, Mouse, Screen
+
+Loop {
+    ;Sleep, 50
+    ImageSearch, foundX, foundY, winX, winY, winX+winW, winY+winH, %image%
+    if (ErrorLevel = 0) {
+        MouseClick, left, foundX, foundY
+        break
+    }
+}
+return
 #ifwinactive
 
 #ifwinactive ahk_exe windowsterminal.exe
