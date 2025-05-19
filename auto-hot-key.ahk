@@ -305,8 +305,8 @@ space & p::send ^{pgdn}
 space & u::send ^{pgup}
 space & v::send !+^v
 space & x::del
-space & g::#tab
-space & b::send {enter}
+space & g::send {enter}
+space & b::#tab
 
 space & e::down
 space & q::left
