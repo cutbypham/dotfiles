@@ -316,7 +316,8 @@ space & w::up
 space & +::volume_up
 space & -::volume_down
 
-space & `::home
+space & `::#+s
+
 space & tab::
 send {mbutton}
 send !{f4}
