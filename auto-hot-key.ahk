@@ -185,6 +185,24 @@ Loop {
     }
 }
 return
+!a::
+image := A_ScriptDir "\imagesearch\resolve\stran.png"
+WinGetPos, winX, winY, winW, winH, A
+CoordMode, Pixel, Screen
+CoordMode, Mouse, Screen
+
+Loop {
+    ;Sleep, 50
+    ImageSearch, foundX, foundY, winX, winY, winX+winW, winY+winH, %image%
+    if (ErrorLevel = 0) {
+        MouseClick, left, foundX, foundY
+        break
+    }
+}
+
+MouseMove, 0, 90, 0, R
+Click
+return
 #ifwinactive
 
 #ifwinactive ahk_exe windowsterminal.exe
@@ -316,7 +334,7 @@ space & w::up
 space & +::volume_up
 space & -::volume_down
 
-space & `::#+s
+space & `::!^s
 
 space & tab::
 send {mbutton}
