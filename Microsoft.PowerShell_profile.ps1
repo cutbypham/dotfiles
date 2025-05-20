@@ -118,6 +118,7 @@ function which ($command) {
 function update() {
     winget upgrade --all
     update-dotfiles
+    pip freeze | % { $_.split('==')[0] } | % { pip install --upgrade $_ }
 }
 
 function download-video( ) {
