@@ -65,6 +65,7 @@ require("lazy").setup({
             { "<leader>r", function() require("spectre").open() end, desc = "Replace in files (Spectre)" },
         },
     },
+    { "ellisonleao/gruvbox.nvim", priority = 1000 , config = true, opts = ...},
     {
         'nvim-telescope/telescope.nvim', tag = '0.1.4',
         requires = { {'nvim-lua/plenary.nvim'} },
@@ -72,8 +73,8 @@ require("lazy").setup({
     }
 })
 
-vim.opt.background = "light"
-vim.cmd('colorscheme shine')
+vim.opt.background = "dark"
+vim.cmd('colorscheme gruvbox')
 
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>f', builtin.find_files, {})
