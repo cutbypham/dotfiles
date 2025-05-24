@@ -39,8 +39,19 @@ send {enter}
 send {esc}
 return
 
-#+wheeldown::volume_up
-#+wheelup::volume_down
+f17::
+send #^v
+sleep 300
+send {down}
+sleep 300
+send {down}
+sleep 300
+send {enter}
+send {esc}
+return
+
+#wheeldown::volume_up
+#wheelup::volume_down
 
 PrintScreen::
     Sleep, 1000
@@ -295,24 +306,27 @@ tab & 3::run, "E:\phone\Camera\Camera"
 
 tab::tab
 
-space & ,::pgup
 space & [::send !{left}
 space & ]::send !{right}
 space & d::bs
-space & h::home
-space & i::up
+
+space & i::home
+space & o::end
+
+space & `;::send #{space}
+
+space & h::left
+space & j::down
+space & k::up
 space & l::right
-space & j::left
-space & m::pgdn
-space & n::^t
-space & `;::end
-space & p::send ^{pgdn}
-space & u::send ^{pgup}
+
+space & p::pgdn
+space & u::pgup
+
 space & v::send !+^v
 space & x::del
 space & g::send {enter}
 space & b::#tab
-
 
 space & +::volume_up
 space & -::volume_down

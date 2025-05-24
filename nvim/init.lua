@@ -81,7 +81,7 @@ vim.keymap.set('n', '<leader>g', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>b', builtin.buffers, {})
 vim.keymap.set('n', '<leader>;', builtin.commands, {})
 
-vim.keymap.set("i", "jk", "<Esc>")
+vim.keymap.set("i", "jj", "<ESC>", { silent = true })
 
 vim.opt.clipboard = "unnamedplus"
 
