@@ -39,8 +39,8 @@ send {enter}
 send {esc}
 return
 
-#wheeldown::volume_up
-#wheelup::volume_down
+#+wheeldown::volume_up
+#+wheelup::volume_down
 
 PrintScreen::
     Sleep, 1000
@@ -299,14 +299,13 @@ space & ,::pgup
 space & [::send !{left}
 space & ]::send !{right}
 space & d::bs
-space & h::left
-space & i::home
-space & j::down
-space & k::up
+space & h::home
+space & i::up
 space & l::right
+space & j::left
 space & m::pgdn
 space & n::^t
-space & o::end
+space & `;::end
 space & p::send ^{pgdn}
 space & u::send ^{pgup}
 space & v::send !+^v
@@ -314,10 +313,6 @@ space & x::del
 space & g::send {enter}
 space & b::#tab
 
-space & e::down
-space & q::left
-space & r::right
-space & w::up
 
 space & +::volume_up
 space & -::volume_down
@@ -354,3 +349,14 @@ space::send  {space}
 !space::send !{space}
 #space::send #{space}
 ^space::send ^{space}
+
+f13 & w::up
+f13 & s::down
+f13 & a::left
+f13 & d::right
+
+f13::send  {f13}
++f13::send +{f13}
+!f13::send !{f13}
+#f13::send #{f13}
+^f13::send ^{f13}
