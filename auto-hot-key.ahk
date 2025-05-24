@@ -39,17 +39,6 @@ send {enter}
 send {esc}
 return
 
-f17::
-send #^v
-sleep 300
-send {down}
-sleep 300
-send {down}
-sleep 300
-send {enter}
-send {esc}
-return
-
 #wheeldown::volume_up
 #wheelup::volume_down
 
@@ -320,8 +309,11 @@ space & j::down
 space & k::up
 space & l::right
 
-space & p::pgdn
-space & u::pgup
+space & p::^pgdn
+space & u::^pgup
+
+space & m::pgdn
+space & ,::pgup
 
 space & v::send !+^v
 space & x::del
@@ -358,19 +350,13 @@ space & f5::send #^0
 Space & f6::send #+s
 space & f9::reload
 
+space & q::left
+space & e::up
+space & w::down
+space & r::right
+
 space::send  {space}
 +space::send +{space}
 !space::send !{space}
 #space::send #{space}
 ^space::send ^{space}
-
-f13 & w::up
-f13 & s::down
-f13 & a::left
-f13 & d::right
-
-f13::send  {f13}
-+f13::send +{f13}
-!f13::send !{f13}
-#f13::send #{f13}
-^f13::send ^{f13}
