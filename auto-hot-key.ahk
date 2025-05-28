@@ -39,6 +39,17 @@ send {enter}
 send {esc}
 return
 
+f17::
+send #^v
+sleep 300
+send {down}
+sleep 300
+send {down}
+sleep 300
+send {enter}
+send {esc}
+return
+
 #wheeldown::volume_up
 #wheelup::volume_down
 
