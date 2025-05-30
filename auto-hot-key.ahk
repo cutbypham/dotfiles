@@ -143,7 +143,7 @@ f13:: ;change hotkey to desired hotkey
 return
 #ifwinactive
 
-#ifwinactive ahk_exe chrome.exe
+#ifwinactive ahk_exe firefox.exe
 f1::^+t
 f2::^w
 f3::
@@ -170,6 +170,25 @@ f13::^+a
 !s::send ^{pgdn}
 space & a::send !{Left}
 space & s::send !{Right}
+;Click, 1490, 50
+!a::
+image := A_ScriptDir "\imagesearch\resolve\stran.png"
+WinGetPos, winX, winY, winW, winH, A
+CoordMode, Pixel, Screen
+CoordMode, Mouse, Screen
+
+Loop {
+    ;Sleep, 50
+    ImageSearch, foundX, foundY, winX, winY, winX+winW, winY+winH, %image%
+    if (ErrorLevel = 0) {
+        MouseClick, left, foundX, foundY
+        break
+    }
+}
+
+MouseMove, 0, 90, 0, R
+Click
+return
 #ifwinactive
 
 #ifwinactive ahk_exe windowsterminal.exe
