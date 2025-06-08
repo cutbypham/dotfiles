@@ -310,7 +310,6 @@ send !{f4}
 return
 
 space & f13::
-send {mbutton}
 movingwindowtootherdisplay()
 JumpCursorBetweenMonitors()
 return
