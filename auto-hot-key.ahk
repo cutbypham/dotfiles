@@ -12,6 +12,7 @@ CoordMode, Mouse, Screen
 
 #o::suspend
 space & f::RButton
+space & t::JumpCursorBetweenMonitors()
 
 insert::f14
 delete::f15
