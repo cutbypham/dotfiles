@@ -10,7 +10,7 @@ sendmode input
 setworkingdir %a_scriptdir%
 CoordMode, Mouse, Screen
 
-#RButton::suspend
+#o::suspend
 space & f::RButton
 
 insert::f14
