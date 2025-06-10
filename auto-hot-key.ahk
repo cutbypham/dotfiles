@@ -1,4 +1,4 @@
-;#KeyHistory
+;KeyHistory
 #Persistent
 #noenv
 #singleinstance force
@@ -11,8 +11,6 @@ setworkingdir %a_scriptdir%
 CoordMode, Mouse, Screen
 
 #o::suspend
-space & f::RButton
-space & t::JumpCursorBetweenMonitors()
 
 insert::f14
 delete::f15
@@ -132,10 +130,6 @@ return
 +`;::send +{;}
 !`;::send !{;}
 #`;::send #{;}
-
-space & a::send +4
-space & s::send +6
-space & t::send +7
 #ifwinactive
 
 #ifwinactive, ahk_exe Sononym.exe
@@ -169,8 +163,6 @@ return
 f13::^+a
 !w::send ^{pgup}
 !s::send ^{pgdn}
-space & a::send !{Left}
-space & s::send !{Right}
 #ifwinactive
 
 #ifwinactive ahk_exe windowsterminal.exe
@@ -266,18 +258,26 @@ togglemaxwindow()
         }
 }
 
-tab & e::run, "c:\users\master\editing\projects\"
-tab & w::run, "c:\users\master\downloads\"
-tab & r::run, "e:\render\"
-tab & t::run, "C:\Users\master\Pictures"
-tab & 2::run, "e:\obs\"
-tab & 3::run, "E:\phone\Camera\Camera"
+space & f::MButton
+space & d::LButton
+space & s::RButton
 
-tab::tab
+space & q::
+    While GetKeyState("q", "P") {  ; Loop while 'q' is held
+        Send {WheelUp}
+        Sleep 15  ; Adjust speed (lower = faster)
+    }
+return
+
+space & a::
+    While GetKeyState("a", "P") {  ; Loop while 'q' is held
+        Send {WheelDown}
+        Sleep 15  ; Adjust speed (lower = faster)
+    }
+return
 
 space & [::send !{left}
 space & ]::send !{right}
-space & d::bs
 
 space & i::home
 space & o::end
@@ -296,8 +296,6 @@ space & m::pgdn
 space & ,::pgup
 
 space & v::send !+^v
-space & x::del
-space & g::send {enter}
 space & b::#tab
 
 space & +::volume_up
@@ -329,13 +327,17 @@ space & f5::send #^0
 Space & f6::send #+s
 space & f9::reload
 
-space & q::left
-space & e::up
-space & w::down
-space & r::right
-
 space::send  {space}
 +space::send +{space}
 !space::send !{space}
 #space::send #{space}
 ^space::send ^{space}
+
+tab & e::run, "c:\users\master\editing\projects\"
+tab & w::run, "c:\users\master\downloads\"
+tab & r::run, "e:\render\"
+tab & t::run, "C:\Users\master\Pictures"
+tab & 2::run, "e:\obs\"
+tab & 3::run, "E:\phone\Camera\Camera"
+
+tab::tab
