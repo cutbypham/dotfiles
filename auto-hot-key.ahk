@@ -312,7 +312,6 @@ return
 
 space & f13::
 movingwindowtootherdisplay()
-JumpCursorBetweenMonitors()
 return
 
 space & 1::send ^#1
