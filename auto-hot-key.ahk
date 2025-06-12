@@ -167,8 +167,6 @@ send {enter}
 return
 ^o::^+a
 f13::^+a
-!w::send ^{pgup}
-!s::send ^{pgdn}
 space & a::send !{Left}
 space & s::send !{Right}
 #ifwinactive
