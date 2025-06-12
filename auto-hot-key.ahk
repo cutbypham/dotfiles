@@ -11,7 +11,6 @@ setworkingdir %a_scriptdir%
 CoordMode, Mouse, Screen
 
 #o::suspend
-
 space & f::RButton
 space & t::JumpCursorBetweenMonitors()
 
@@ -79,6 +78,8 @@ appskey::rcontrol
 ;#include, %a_scriptdir%\lib\snippets.ahk
 
 #ifwinactive, ahk_exe onecommander.exe
+!s::send ^{tab}
+!w::send ^+{tab}
 f1::
 send {mbutton}
 sleep 50
@@ -166,6 +167,8 @@ send {enter}
 return
 ^o::^+a
 f13::^+a
+!w::send ^{pgup}
+!s::send ^{pgdn}
 space & a::send !{Left}
 space & s::send !{Right}
 #ifwinactive
@@ -173,6 +176,8 @@ space & s::send !{Right}
 #ifwinactive ahk_exe windowsterminal.exe
 f3::^+t
 f2::^+w
+!w::send ^{pgup}
+!s::send ^{pgdn}
 
 f13 & l::send !{right}
 f13 & h::send !{left}
