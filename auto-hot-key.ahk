@@ -135,7 +135,7 @@ return
 
 space & a::send +4
 space & s::send +6
-space & t::send +7
+space & c::send +7
 #ifwinactive
 
 #ifwinactive, ahk_exe Sononym.exe
