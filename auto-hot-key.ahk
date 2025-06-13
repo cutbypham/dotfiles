@@ -11,8 +11,8 @@ setworkingdir %a_scriptdir%
 CoordMode, Mouse, Screen
 
 #o::suspend
-space & f::RButton
-space & t::JumpCursorBetweenMonitors()
+space & t::RButton
+space & f::JumpCursorBetweenMonitors()
 
 insert::f14
 delete::f15
