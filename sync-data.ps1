@@ -21,6 +21,10 @@ auto-git-commit
 cd C:\Users\master\repos\davinci-resolve\
 auto-git-commit
 
+#############################################################
+#############################################################
+#############################################################
+
 $LogFile = "C:\Users\master\Documents\sync-data-log.txt"
 
 function Write-Log {
