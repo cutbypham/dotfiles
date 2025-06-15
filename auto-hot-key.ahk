@@ -295,7 +295,7 @@ space & u::^pgup
 space & m::pgdn
 space & ,::pgup
 
-space & v::send !+^v
+space & v::send #v
 space & c::del
 space & g::send {enter}
 space & b::#tab

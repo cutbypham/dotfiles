@@ -1,3 +1,4 @@
+
 Set-PSReadLineOption -EditMode vi
 
 $env:EDITOR = 'nvim'
