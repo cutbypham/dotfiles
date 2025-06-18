@@ -13,6 +13,7 @@ CoordMode, Mouse, Screen
 #o::suspend
 space & d::RButton
 space & f::JumpCursorBetweenMonitors()
+PrintScreen::PrintScreen
 
 insert::f14
 delete::f15
@@ -56,10 +57,10 @@ return
 #wheeldown::volume_up
 #wheelup::volume_down
 
-PrintScreen::
-    Sleep, 1000
-    SendMessage, 0x112, 0xF170, 2,, Program Manager
-return
+;PrintScreen::
+;    Sleep, 1000
+;    SendMessage, 0x112, 0xF170, 2,, Program Manager
+;return
 ^PrintScreen::
 DllCall("PowrProf\SetSuspendState", "Int", 0, "Int", 0, "Int", 0)
 return
