@@ -11,7 +11,7 @@ setworkingdir %a_scriptdir%
 CoordMode, Mouse, Screen
 
 #o::suspend
-space & d::RButton
+space & LButton::RButton
 space & f::JumpCursorBetweenMonitors()
 PrintScreen::PrintScreen
 
@@ -270,6 +270,7 @@ togglemaxwindow()
 tab & e::run, "c:\users\master\editing\projects\"
 tab & w::run, "c:\users\master\downloads\"
 tab & r::run, "e:\render\"
+tab & 2::run, "e:\obs\"
 
 tab::tab
 
@@ -280,7 +281,7 @@ space & x::bs
 space & i::home
 space & o::end
 
-space & `;::send #{space}
+space & `;::send ^!j
 
 space & h::left
 space & j::down
