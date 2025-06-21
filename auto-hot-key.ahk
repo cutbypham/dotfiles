@@ -54,8 +54,8 @@ send {enter}
 send {esc}
 return
 
-#wheeldown::volume_up
-#wheelup::volume_down
+space & wheeldown::volume_up
+space & wheelup::volume_down
 
 ;PrintScreen::
 ;    Sleep, 1000
