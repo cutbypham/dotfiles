@@ -40,27 +40,6 @@ send {enter}
 send {esc}
 return
 
-f17::
-send #^v
-sleep 300
-send {down}
-sleep 300
-send {down}
-sleep 300
-send {enter}
-send {esc}
-return
-
-^PrintScreen::
-DllCall("PowrProf\SetSuspendState", "Int", 0, "Int", 0, "Int", 0)
-return
-^f14::
-Run, shutdown.exe /r /t 0 
-Return
-^f15::
-Run, shutdown /s /t 0
-Return
-
 sc056::rcontrol
 appskey::rcontrol
 
@@ -92,6 +71,9 @@ f2::^w
 ^o::^+a
 !w::send ^{pgup}
 !s::send ^{pgdn}
+
+!d::send !{left}
+!e::send !{right}
 
 f3::
 send ^c
@@ -204,6 +186,9 @@ tab & 2::run, "e:\obs\"
 
 tab::tab
 
+space & =::volume_up
+space & -::volume_down
+
 space & a::^#1
 space & s::^#2
 space & d::^#3
@@ -229,6 +214,11 @@ space & k::up
 space & j::down
 space & l::right
 space & h::left
+
+space & tab::
+send {mbutton}
+send !{f4}
+return
 
 space & PrintScreen::reload
 
