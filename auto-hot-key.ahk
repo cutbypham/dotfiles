@@ -11,8 +11,6 @@ setworkingdir %a_scriptdir%
 CoordMode, Mouse, Screen
 
 #o::suspend
-space & LButton::RButton
-PrintScreen::PrintScreen
 
 insert::f14
 delete::f15
@@ -53,13 +51,6 @@ send {enter}
 send {esc}
 return
 
-space & wheeldown::volume_up
-space & wheelup::volume_down
-
-;PrintScreen::
-;    Sleep, 1000
-;    SendMessage, 0x112, 0xF170, 2,, Program Manager
-;return
 ^PrintScreen::
 DllCall("PowrProf\SetSuspendState", "Int", 0, "Int", 0, "Int", 0)
 return
@@ -71,31 +62,14 @@ Run, shutdown /s /t 0
 Return
 
 sc056::rcontrol
-
 appskey::rcontrol
 
 #include, %a_scriptdir%\lib\timelineclick.ahk
-;#include, %a_scriptdir%\lib\snippets.ahk
 
 #ifwinactive, ahk_exe onecommander.exe
 !s::send ^{tab}
 !w::send ^+{tab}
-f1::
-send {mbutton}
-sleep 50
-send ^+c
-sleep 50
-send #4
-sleep 50
-send ^+t
-sleep 150
-send useby
-sleep 200
-send {enter}
-sleep 50
-return
 #ifwinactive
-
 
 #SingleInstance, Force
 
@@ -110,43 +84,15 @@ CoordMode, Pixel, Screen
 f13:: ;change hotkey to desired hotkey
    timelineclick(["\imagesearch\resolve\editpage.png", "\imagesearch\resolve\fairlight.png",  "\imagesearch\resolve\cutpage.png"], [70,63,50])
 return
-`; & d::
-send +v
-send {del}
-return
-`; & j::
-send +v
-send ^+,
-return
-`; & l::
-send +v
-send ^+.
-return
-`; & 3::
-send m
-send {esc}
-send {del}
-return
-
-`;::send  {;}
-+`;::send +{;}
-!`;::send !{;}
-#`;::send #{;}
-
-space & a::send +4
-space & s::send +6
-space & c::send +7
-#ifwinactive
-
-#ifwinactive, ahk_exe Sononym.exe
-f13:: ;change hotkey to desired hotkey
-   timelineclick(["\imagesearch\resolve\editpage.png", "\imagesearch\resolve\fairlight.png",  "\imagesearch\resolve\cutpage.png"], [70,63,50])
-return
 #ifwinactive
 
 #ifwinactive ahk_exe firefox.exe
 f1::^+t
 f2::^w
+^o::^+a
+!w::send ^{pgup}
+!s::send ^{pgdn}
+
 f3::
 send ^c
 sleep 50
@@ -155,6 +101,7 @@ sleep 50
 send ^v
 send {enter}
 return
+
 f4::
 send ^c
 sleep 50
@@ -165,10 +112,6 @@ send ^v
 sleep 50
 send {enter}
 return
-^o::^+a
-f13::^+a
-!w::send ^{pgup}
-!s::send ^{pgdn}
 #ifwinactive
 
 #ifwinactive ahk_exe windowsterminal.exe
@@ -177,17 +120,7 @@ f2::^+w
 !w::send ^{pgup}
 !s::send ^{pgdn}
 
-f13 & l::send !{right}
-f13 & h::send !{left}
-f13 & j::send !{down}
-f13 & k::send !{up}
-
 f13::^+t
-#ifwinactive
-
-#ifwinactive ahk_exe obsidian.exe
-f1::+1
-f13::p
 #ifwinactive
 
 movingwindowtootherdisplay() {
@@ -271,19 +204,31 @@ tab & 2::run, "e:\obs\"
 
 tab::tab
 
+space & a::^#1
+space & s::^#2
+space & d::^#3
+space & f::^#4
+space & q::^#5
+space & w::^#6
+space & e::^#7
+space & r::^#8
+
+space & LButton::RButton
+
 space & f13::
 movingwindowtootherdisplay()
 return
 
-space & e::up
-space & d::down
-space & f::right
-space & s::left
+space & wheeldown::volume_up
+space & wheelup::volume_down
 
-space & i::up
-space & k::down
+space & i::home
+space & o::end
+
+space & k::up
+space & j::down
 space & l::right
-space & j::left
+space & h::left
 
 space & PrintScreen::reload
 
@@ -292,15 +237,3 @@ space::send  {space}
 !space::send !{space}
 #space::send #{space}
 ^space::send ^{space}
-
-d & f::^#1
-d & s::^#2
-d & a::^#3
-d & g::^#4
-d & space::^#5
-
-d::send  {d}
-+d::send +{d}
-!d::send !{d}
-#d::send #{d}
-^d::send ^{d}
