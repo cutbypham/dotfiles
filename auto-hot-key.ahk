@@ -200,9 +200,8 @@ space & r::^#8
 
 space & LButton::RButton
 
-space & f13::
-movingwindowtootherdisplay()
-return
+space & f13::bs
+space & g::delete
 
 space & wheeldown::volume_up
 space & wheelup::volume_down
