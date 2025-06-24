@@ -12,7 +12,6 @@ CoordMode, Mouse, Screen
 
 #o::suspend
 space & LButton::RButton
-space & f::JumpCursorBetweenMonitors()
 PrintScreen::PrintScreen
 
 insert::f14
@@ -170,8 +169,6 @@ return
 f13::^+a
 !w::send ^{pgup}
 !s::send ^{pgdn}
-space & a::send !{Left}
-space & s::send !{Right}
 #ifwinactive
 
 #ifwinactive ahk_exe windowsterminal.exe
@@ -274,66 +271,36 @@ tab & 2::run, "e:\obs\"
 
 tab::tab
 
-space & [::send !{left}
-space & ]::send !{right}
-space & x::bs
-
-space & i::home
-space & o::end
-
-space & `;::send ^!j
-
-space & h::left
-space & j::down
-space & k::up
-space & l::right
-
-space & p::^pgdn
-space & u::^pgup
-
-space & m::pgdn
-space & ,::pgup
-
-space & v::send #v
-space & c::del
-space & g::send {enter}
-space & b::#tab
-
-space & +::volume_up
-space & -::volume_down
-
-space & `::!^s
-
-space & tab::
-send {mbutton}
-send !{f4}
-return
-
 space & f13::
 movingwindowtootherdisplay()
 return
 
-space & 1::send ^#1
-space & 2::send ^#2
-space & 3::send ^#3
-space & 4::send ^#4
-space & 5::send ^#5
-
-space & f1::send #^6
-space & f2::send #^7
-space & f3::send #^8
-space & f4::send #^9
-space & f5::send #^0
-Space & f6::send #+s
-space & f9::reload
-
-space & q::left
 space & e::up
-space & w::down
-space & r::right
+space & d::down
+space & f::right
+space & s::left
+
+space & i::up
+space & k::down
+space & l::right
+space & j::left
+
+space & PrintScreen::reload
 
 space::send  {space}
 +space::send +{space}
 !space::send !{space}
 #space::send #{space}
 ^space::send ^{space}
+
+d & f::^#1
+d & s::^#2
+d & a::^#3
+d & g::^#4
+d & space::^#5
+
+d::send  {d}
++d::send +{d}
+!d::send !{d}
+#d::send #{d}
+^d::send ^{d}
