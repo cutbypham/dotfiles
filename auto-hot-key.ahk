@@ -198,6 +198,8 @@ space & w::^#6
 space & e::^#7
 space & r::^#8
 
+space & v::^#+v
+
 space & LButton::RButton
 
 space & f13::bs
