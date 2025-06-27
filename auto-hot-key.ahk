@@ -12,10 +12,6 @@ CoordMode, Mouse, Screen
 
 #o::suspend
 
-!m::
-SoundSet, +1, "High Definition Audio Device"
-return
-
 insert::f14
 delete::f15
 home::f16
@@ -203,6 +199,11 @@ space & e::^#7
 space & r::^#8
 
 space & v::^#+v
+
+space & u::^pgup
+space & p::^pgdn
+
+space & z::movingwindowtootherdisplay()
 
 space & LButton::RButton
 
