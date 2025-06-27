@@ -12,6 +12,10 @@ CoordMode, Mouse, Screen
 
 #o::suspend
 
+!m::
+SoundSet, +1, "High Definition Audio Device"
+return
+
 insert::f14
 delete::f15
 home::f16
