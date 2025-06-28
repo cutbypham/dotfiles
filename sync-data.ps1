@@ -6,7 +6,7 @@ function auto-git-commit() {
 }
 
 cd E:\Music\
-yt-dlp --cookies-from-browser firefox --download-archive archive.txt --extract-audio --audio-format mp3 --embed-thumbnail --embed-metadata --add-metadata -o "%(title)s.%(ext)s" "https://music.youtube.com/playlist?list=PLg3vjVhK1vnYQWB26nwADGqEf2xHzgSZR"
+python -m spotdl --archive archive.txt https://www.youtube.com/playlist?list=PLg3vjVhK1vnYQWB26nwADGqEf2xHzgSZR
 cd -
 
 cp $profile ~\repos\dotfiles\
