@@ -18,6 +18,9 @@ cp C:\Users\master\AppData\Roaming\Mozilla\Firefox\Profiles\3wr0grx7.default-rel
 cd C:\Users\master\repos\dotfiles
 auto-git-commit
 
+cd C:\Users\master\repos\rss-to-email-once-a-day
+auto-git-commit
+
 cd C:\Users\master\repos\davinci-resolve\
 auto-git-commit
 
