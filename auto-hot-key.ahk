@@ -200,8 +200,8 @@ space & r::^#8
 
 space & v::^#+v
 
-space & u::^pgup
-space & p::^pgdn
+space & u::pgup
+space & p::pgdn
 
 space & z::movingwindowtootherdisplay()
 
