@@ -63,6 +63,29 @@ CoordMode, Pixel, Screen
 f13:: ;change hotkey to desired hotkey
    timelineclick(["\imagesearch\resolve\editpage.png", "\imagesearch\resolve\fairlight.png",  "\imagesearch\resolve\cutpage.png"], [70,63,50])
 return
+
+`; & d::
+send +v
+send {del}
+return
+`; & j::
+send +v
+send ^+,
+return
+`; & l::
+send +v
+send ^+.
+return
+`; & 3::
+send m
+send {esc}
+send {del}
+return
+
+`;::send  {;}
++`;::send +{;}
+!`;::send !{;}
+#`;::send #{;}
 #ifwinactive
 
 #ifwinactive ahk_exe firefox.exe
