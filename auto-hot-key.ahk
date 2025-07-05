@@ -53,7 +53,11 @@ appskey::rcontrol
 
 
 #ifwinactive, ahk_exe Sononym.exe
-^f::Send ^f^a
+^f::
+Send ^f
+sleep 100
+Send ^a
+return
 #ifwinactive
 
 #SingleInstance, Force
