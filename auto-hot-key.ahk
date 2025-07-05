@@ -50,6 +50,12 @@ appskey::rcontrol
 !w::send ^+{tab}
 #ifwinactive
 
+
+
+#ifwinactive, ahk_exe Sononym.exe
+^f::Send ^f^a
+#ifwinactive
+
 #SingleInstance, Force
 
 ; Set the working directory to the script's location
