@@ -238,7 +238,7 @@ space & p::pgdn
 
 space & z::movingwindowtootherdisplay()
 
-space & mbutton::RButton
+space & lbutton::RButton
 
 space & f13::bs
 space & g::delete
