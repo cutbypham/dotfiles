@@ -12,45 +12,12 @@ CoordMode, Mouse, Screen
 
 #o::suspend
 
-insert::f14
-delete::f15
-home::f16
-end::f17
-pgup::f18
-pgdn::f19
-left::f20
-up::f21
-down::f22
-right::f23
-!#m::f24
-
-f15::
-send #^v
-sleep 300
-send {enter}
-send {esc}
-return
-
-f16::
-send #^v
-sleep 300
-send {down}
-sleep 300
-send {enter}
-send {esc}
-return
-
-sc056::rcontrol
-appskey::rcontrol
-
 #include, %a_scriptdir%\lib\timelineclick.ahk
 
 #ifwinactive, ahk_exe onecommander.exe
 !s::send ^{tab}
 !w::send ^+{tab}
 #ifwinactive
-
-
 
 #ifwinactive, ahk_exe Sononym.exe
 ^f::
@@ -99,39 +66,15 @@ return
 #ifwinactive
 
 #ifwinactive ahk_exe firefox.exe
-f1::^+t
-f2::^w
 ^o::^+a
 !w::send ^{pgup}
 !s::send ^{pgdn}
 
 !d::send !{left}
 !e::send !{right}
-
-f3::
-send ^c
-sleep 50
-send ^t
-sleep 50
-send ^v
-send {enter}
-return
-
-f4::
-send ^c
-sleep 50
-send ^t
-sleep 50
-send y{space}
-send ^v
-sleep 50
-send {enter}
-return
 #ifwinactive
 
 #ifwinactive ahk_exe windowsterminal.exe
-f3::^+t
-f2::^+w
 !w::send ^{pgup}
 !s::send ^{pgdn}
 
@@ -219,6 +162,33 @@ tab & 2::run, "e:\obs\"
 
 tab::tab
 
+space & [::
+send #^v
+sleep 300
+send {enter}
+send {esc}
+return
+
+space & ]::
+send #^v
+sleep 300
+send {down}
+sleep 300
+send {enter}
+send {esc}
+return
+
+space & \::
+send #^v
+sleep 300
+send {down}
+sleep 300
+send {down}
+sleep 300
+send {enter}
+send {esc}
+return
+
 space & =::volume_up
 space & -::volume_down
 
@@ -259,7 +229,7 @@ send {mbutton}
 send !{f4}
 return
 
-space & PrintScreen::reload
+space & 0::reload
 
 space::send  {space}
 +space::send +{space}
