@@ -66,7 +66,7 @@ return
 #`;::send #{;}
 #ifwinactive
 
-#ifwinactive ahk_exe brave.exe
+#ifwinactive ahk_exe firefox.exe
 ^o::^+a
 !w::send ^{pgup}
 !s::send ^{pgdn}
