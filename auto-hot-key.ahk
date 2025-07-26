@@ -17,6 +17,7 @@ CoordMode, Mouse, Screen
 #ifwinactive, ahk_exe onecommander.exe
 !s::send ^{tab}
 !w::send ^+{tab}
+^e::send {f2}
 #ifwinactive
 
 #ifwinactive, ahk_exe Sononym.exe
