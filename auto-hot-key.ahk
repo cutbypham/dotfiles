@@ -12,8 +12,6 @@ CoordMode, Mouse, Screen
 
 #o::suspend
 
-#include, %a_scriptdir%\lib\timelineclick.ahk
-
 #ifwinactive, ahk_exe onecommander.exe
 !s::send ^{tab}
 !w::send ^+{tab}
@@ -25,6 +23,9 @@ CoordMode, Mouse, Screen
 Send ^f
 sleep 100
 Send ^a
+return
+!f::
+send !{backspace}
 return
 #ifwinactive
 
