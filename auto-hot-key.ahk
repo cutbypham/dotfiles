@@ -30,18 +30,6 @@ return
 
 #SingleInstance, Force
 
-; Set the working directory to the script's location
-SetWorkingDir, %A_ScriptDir%
-
-; Set the coordinate mode for mouse and pixel to screen
-CoordMode, Mouse, Screen
-CoordMode, Pixel, Screen
-
-#ifwinactive, ahk_exe resolve.exe
-f13:: ;change hotkey to desired hotkey
-   timelineclick(["\imagesearch\resolve\editpage.png", "\imagesearch\resolve\fairlight.png",  "\imagesearch\resolve\cutpage.png"], [70,63,50])
-return
-
 `; & d::
 send +v
 send {del}
