@@ -5,11 +5,11 @@ function auto-git-commit() {
     git push
 }
 
-cd E:\Music\Club_DJ
-python -m spotdl --archive archive.txt https://www.youtube.com/playlist?list=PLg3vjVhK1vnb1Cmhctb4ZtlCidx2Y1iTR
-cd E:\Music\Bar_DJ
-python -m spotdl --archive archive.txt https://www.youtube.com/playlist?list=PLg3vjVhK1vnbSSaCPsCygbh-_8jbnx0e6
-cd -
+    cd E:\Music\Club_DJ
+    yt-dlp --download-archive archive.txt --extract-audio --audio-format mp3 --embed-thumbnail --embed-metadata --add-metadata -o "%(title)s.%(ext)s" "https://www.youtube.com/playlist?list=PLg3vjVhK1vnb1Cmhctb4ZtlCidx2Y1iTR"
+    cd E:\Music\Bar_DJ
+    yt-dlp --download-archive archive.txt --extract-audio --audio-format mp3 --embed-thumbnail --embed-metadata --add-metadata -o "%(title)s.%(ext)s" "https://www.youtube.com/playlist?list=PLg3vjVhK1vnbSSaCPsCygbh-_8jbnx0e6"
+    cd -
 
 cp $profile ~\repos\dotfiles\
 cp C:\Users\master\AppData\Local\nvim\init.lua ~\repos\dotfiles\nvim
