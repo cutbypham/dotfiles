@@ -6,9 +6,9 @@ function auto-git-commit() {
 }
 
     cd E:\Music\Club_DJ
-    yt-dlp --download-archive archive.txt --extract-audio --audio-format mp3 --embed-thumbnail --embed-metadata --add-metadata -o "%(title)s.%(ext)s" "https://www.youtube.com/playlist?list=PLg3vjVhK1vnb1Cmhctb4ZtlCidx2Y1iTR"
+    yt-dlp --external-downloader aria2c --external-downloader-args '-x 8 -j 2' --download-archive archive.txt --extract-audio --audio-format mp3 --embed-thumbnail --embed-metadata --add-metadata -o "%(title)s.%(ext)s" "https://www.youtube.com/playlist?list=PLg3vjVhK1vnb1Cmhctb4ZtlCidx2Y1iTR"
     cd E:\Music\Bar_DJ
-    yt-dlp --download-archive archive.txt --extract-audio --audio-format mp3 --embed-thumbnail --embed-metadata --add-metadata -o "%(title)s.%(ext)s" "https://www.youtube.com/playlist?list=PLg3vjVhK1vnbSSaCPsCygbh-_8jbnx0e6"
+    yt-dlp --external-downloader aria2c --external-downloader-args '-x 8 -j 2' --download-archive archive.txt --extract-audio --audio-format mp3 --embed-thumbnail --embed-metadata --add-metadata -o "%(title)s.%(ext)s" "https://www.youtube.com/playlist?list=PLg3vjVhK1vnbSSaCPsCygbh-_8jbnx0e6"
     cd -
 
 cp $profile ~\repos\dotfiles\
