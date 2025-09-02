@@ -3,31 +3,7 @@ Set-PSReadLineOption -EditMode vi
 
 $env:EDITOR = 'nvim'
 
-function dji {
-    param (
-        [string]$TargetFolder = "proxy"
-    )
-    
-    # Create the target folder if it does not exist
-    if (-not (Test-Path -Path $TargetFolder)) {
-        New-Item -ItemType Directory -Path $TargetFolder | Out-Null
-    }
-
-    # Move all ".lrf" files into the target folder
-    Get-ChildItem -Path . -Filter *.lrf -File | Move-Item -Destination $TargetFolder
-
-    # Change to the target folder
-    Set-Location -Path $TargetFolder
-
-    # Rename all ".lrf" files to ".mp4"
-    Get-ChildItem -Filter *.lrf -File | Rename-Item -NewName { $_.Name -replace '\.lrf$', '.mp4' }
-    
-    exit
-}
-
-function titus() {
-    irm "https://christitus.com/win" | iex
-}
+Set-Alias chrome 'C:\Program Files\Google\Chrome\Application\chrome.exe'
 
 function v() {
     nvim .
@@ -64,6 +40,17 @@ function edit-nvim-config() { nvim C:\Users\master\AppData\Local\nvim\init.lua }
 
 function d() {
     aria2c --max-connection-per-server=16 --split=10 --enable-http-pipelining=true --max-overall-download-limit=0 --file-allocation=falloc --disk-cache=32M --seed-time=0 "$args"
+}
+
+function update-dotfiles() {
+    cp $profile ~\repos\cutbypham\dotfiles\
+    cp C:\Users\master\AppData\Local\nvim\init.lua ~\repos\cutbypham\dotfiles\nvim
+    cd ~\repos\cutbypham\dotfiles\
+    git add Microsoft.PowerShell_profile.ps1
+    git add nvim\init.lua
+    git commit -m "pwsh, nvim"
+    git push
+    cd -
 }
 
 Import-Module PSReadLine
@@ -131,17 +118,18 @@ function which ($command) {
 
 function update() {
     winget upgrade --all
+    update-dotfiles
     pip freeze | % { $_.split('==')[0] } | % { pip install --upgrade $_ }
 }
 
 function download-video( ) {
-    yt-dlp --external-downloader aria2c --external-downloader-args '-x 16 -s 16 -j 8' -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4' $args
+    yt-dlp -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4' $args
 }
 Set-Alias dv download-video
 Set-Alias y yt-dlp
 
 function download-audio() {
-    yt-dlp --external-downloader aria2c --external-downloader-args '-x 16 -s 16 -j 8' --extract-audio --continue --add-metadata --embed-thumbnail --audio-format mp3 --audio-quality 0 --metadata-from-title="%(artist)s - %(title)s" "$args"
+    yt-dlp --extract-audio --continue --add-metadata --embed-thumbnail --audio-format mp3 --audio-quality 0 --metadata-from-title="%(artist)s - %(title)s" "$args"
 }
 Set-Alias da download-audio
 
@@ -151,10 +139,8 @@ function download-thumbnail() {
 Set-Alias dt download-thumbnail
 
 function sync-music() {
-    cd E:\Music\Club_DJ
-    yt-dlp --external-downloader aria2c --external-downloader-args '-x 16 -s 16 -j 8' --download-archive archive.txt --extract-audio --audio-format mp3 --embed-thumbnail --embed-metadata --add-metadata -o "%(title)s.%(ext)s" "https://www.youtube.com/playlist?list=PLg3vjVhK1vnb1Cmhctb4ZtlCidx2Y1iTR"
-    cd E:\Music\Bar_DJ
-    yt-dlp --external-downloader aria2c --external-downloader-args '-x 16 -s 16 -j 8' --download-archive archive.txt --extract-audio --audio-format mp3 --embed-thumbnail --embed-metadata --add-metadata -o "%(title)s.%(ext)s" "https://www.youtube.com/playlist?list=PLg3vjVhK1vnbSSaCPsCygbh-_8jbnx0e6"
+    cd E:\Music\
+yt-dlp --cookies-from-browser firefox --download-archive archive.txt --extract-audio --audio-format mp3 --embed-thumbnail --embed-metadata --add-metadata -o "%(title)s.%(ext)s" "https://music.youtube.com/playlist?list=PLg3vjVhK1vnYQWB26nwADGqEf2xHzgSZR"
     cd -
 }
 
