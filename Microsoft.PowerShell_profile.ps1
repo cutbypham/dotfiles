@@ -1,9 +1,27 @@
-
 Set-PSReadLineOption -EditMode vi
 
 $env:EDITOR = 'nvim'
 
-Set-Alias chrome 'C:\Program Files\Google\Chrome\Application\chrome.exe'
+function dji {
+    $proxyPath = ".\proxy"
+
+    # Check if "proxy" folder exists; if not, create it
+    if (-not (Test-Path -Path $proxyPath)) {
+        New-Item -ItemType Directory -Path $proxyPath
+    }
+
+    # Get all .LRF files in the current directory
+    $lrfFiles = Get-ChildItem -Path . -Filter *.LRF
+
+    foreach ($file in $lrfFiles) {
+        # Define new file name with .mp4 extension
+        $newName = [System.IO.Path]::ChangeExtension($file.Name, ".mp4")
+
+        # Move and rename file to proxy folder
+        Move-Item -Path $file.FullName -Destination (Join-Path -Path $proxyPath -ChildPath $newName)
+    }
+    exit
+}
 
 function v() {
     nvim .
@@ -43,9 +61,9 @@ function d() {
 }
 
 function update-dotfiles() {
-    cp $profile ~\repos\cutbypham\dotfiles\
-    cp C:\Users\master\AppData\Local\nvim\init.lua ~\repos\cutbypham\dotfiles\nvim
-    cd ~\repos\cutbypham\dotfiles\
+    cp $profile ~\repos\dotfiles\
+    cp C:\Users\master\AppData\Local\nvim\init.lua ~\repos\dotfiles\nvim
+    cd ~\repos\dotfiles\
     git add Microsoft.PowerShell_profile.ps1
     git add nvim\init.lua
     git commit -m "pwsh, nvim"
@@ -119,7 +137,6 @@ function which ($command) {
 function update() {
     winget upgrade --all
     update-dotfiles
-    pip freeze | % { $_.split('==')[0] } | % { pip install --upgrade $_ }
 }
 
 function download-video( ) {
