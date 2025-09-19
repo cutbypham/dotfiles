@@ -4,6 +4,7 @@
 #singleinstance force
 #installmousehook
 #installkeybdhook
+#MaxHotkeysPerInterval 9999
 setbatchlines -1
 listlines off
 sendmode input
@@ -55,7 +56,7 @@ return
 #`;::send #{;}
 #ifwinactive
 
-#ifwinactive ahk_exe firefox.exe
+#ifwinactive ahk_exe chrome.exe
 ^o::^+a
 !w::send ^{pgup}
 !s::send ^{pgdn}
@@ -145,53 +146,39 @@ togglemaxwindow()
         }
 }
 
-tab & e::run, "c:\users\master\editing\projects\"
+tab & e::run, "f:\projects\"
 tab & w::run, "c:\users\master\downloads\"
 tab & r::run, "e:\render\"
 tab & 2::run, "e:\obs\"
+tab & 3::run, "c:\users\master\"
+tab & 4::run, "f:\Sound"
 
 tab::tab
 
-space & [::
-send #^v
-sleep 300
-send {enter}
-send {esc}
-return
-
-space & ]::
-send #^v
-sleep 300
-send {down}
-sleep 300
-send {enter}
-send {esc}
-return
-
 space & \::
-send #^v
-sleep 300
-send {down}
-sleep 300
-send {down}
-sleep 300
-send {enter}
-send {esc}
+send ^!{f11}
 return
 
 space & =::volume_up
 space & -::volume_down
 
-space & a::^#1
-space & s::^#2
-space & d::^#3
-space & f::^#4
-space & q::^#5
-space & w::^#6
-space & e::^#7
-space & r::^#8
+space & 1::^#1
+space & 2::^#2
+space & 3::^#3
+space & 4::^#4
+space & 5::^#5
 
-space & v::^#+v
+;space & f::Lbutton
+space & d::Mbutton
+space & s::Rbutton
+space & f::
+Click 2
+return
+
+space & q::WheelUp
+space & a::WheelDown
+
+space & v::^!v
 
 space & u::pgup
 space & p::pgdn
@@ -217,6 +204,11 @@ space & h::left
 space & tab::
 send {mbutton}
 send !{f4}
+return
+
+space & esc::
+send {mbutton}
+send ^!{f4}
 return
 
 space & 0::reload
