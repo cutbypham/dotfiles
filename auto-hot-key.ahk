@@ -13,6 +13,21 @@ CoordMode, Mouse, Screen
 
 #o::suspend
 
+^!j::
+IfWinExist, ahk_exe chrome.exe
+{
+    WinActivate
+}
+else
+{
+    Run, chrome.exe
+}
+send ^3
+sleep 25
+send ^i
+sleep 25
+return
+
 #ifwinactive, ahk_exe onecommander.exe
 !s::send ^{tab}
 !w::send ^+{tab}
@@ -162,21 +177,12 @@ return
 space & =::volume_up
 space & -::volume_down
 
-space & 1::^#1
-space & 2::^#2
-space & 3::^#3
-space & 4::^#4
-space & 5::^#5
-
-;space & f::Lbutton
-space & d::Mbutton
-space & s::Rbutton
-space & f::
-Click 2
-return
-
-space & q::WheelUp
-space & a::WheelDown
+space & a::^#1
+space & s::^#2
+space & d::^#3
+space & f::^#4
+space & q::^#5
+space & w::^#6
 
 space & v::^!v
 
