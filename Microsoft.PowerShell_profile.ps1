@@ -68,6 +68,10 @@ function update-dotfiles() {
     git add nvim\init.lua
     git commit -m "pwsh, nvim"
     git push
+    git add .
+    git commit -m "👌Auto commit"
+    git pull
+    git push
     cd -
 }
 
