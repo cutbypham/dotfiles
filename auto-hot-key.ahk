@@ -14,18 +14,20 @@ CoordMode, Mouse, Screen
 #o::suspend
 
 ^!j::
-IfWinExist, ahk_exe chrome.exe
+IfWinExist, ahk_exe firefox.exe
 {
     WinActivate
 }
 else
 {
-    Run, chrome.exe
+    Run, firefox.exe
 }
 send ^3
-sleep 25
-send ^i
-sleep 25
+sleep 50
+send ^j
+sleep 50
+send ^a
+send {bs}
 return
 
 #ifwinactive, ahk_exe onecommander.exe
@@ -71,7 +73,7 @@ return
 #`;::send #{;}
 #ifwinactive
 
-#ifwinactive ahk_exe chrome.exe
+#ifwinactive ahk_exe firefox.exe
 ^o::^+a
 !w::send ^{pgup}
 !s::send ^{pgdn}
