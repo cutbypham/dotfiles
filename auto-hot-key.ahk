@@ -13,23 +13,6 @@ CoordMode, Mouse, Screen
 
 #o::suspend
 
-^!j::
-IfWinExist, ahk_exe firefox.exe
-{
-    WinActivate
-}
-else
-{
-    Run, firefox.exe
-}
-send ^3
-sleep 50
-send ^j
-sleep 50
-send ^a
-send {bs}
-return
-
 #ifwinactive, ahk_exe onecommander.exe
 !s::send ^{tab}
 !w::send ^+{tab}
@@ -172,8 +155,22 @@ tab & 4::run, "f:\Sound"
 
 tab::tab
 
+space & ]::
+send ^#v
+sleep 200
+send {enter}
+sleep 200
+send {esc}
+return
+
 space & \::
-send ^!{f11}
+send ^#v
+sleep 200
+send {down}
+sleep 200
+send {enter}
+sleep 200
+send {esc}
 return
 
 space & =::volume_up
