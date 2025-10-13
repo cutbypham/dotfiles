@@ -155,21 +155,34 @@ tab & 4::run, "f:\Sound"
 
 tab::tab
 
+
+space & [::
+send ^#v
+sleep 250
+send {enter}
+sleep 250
+send {esc}
+return
+
 space & ]::
 send ^#v
-sleep 200
+sleep 250
+send {down}
+sleep 250
 send {enter}
-sleep 200
+sleep 250
 send {esc}
 return
 
 space & \::
 send ^#v
-sleep 200
+sleep 250
 send {down}
-sleep 200
+sleep 250
+send {down}
+sleep 250
 send {enter}
-sleep 200
+sleep 250
 send {esc}
 return
 
