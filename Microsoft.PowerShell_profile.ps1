@@ -159,11 +159,10 @@ function download-thumbnail() {
 }
 Set-Alias dt download-thumbnail
 
-function sync-music() {
-    cd E:\Music\
-yt-dlp --cookies-from-browser firefox --download-archive archive.txt --extract-audio --audio-format mp3 --embed-thumbnail --embed-metadata --add-metadata -o "%(title)s.%(ext)s" "https://www.youtube.com/playlist?list=PLg3vjVhK1vnYoiEE4PyH4z5NaWhcFHVEZ"
-    cd -
+function download-music() {
+    yt-dlp --cookies-from-browser firefox --download-archive archive.txt --extract-audio --audio-format mp3 --embed-thumbnail --embed-metadata --add-metadata -o "%(title)s.%(ext)s" "$args"
 }
+Set-Alias dm download-music
 
 function download-youtube-video-to-watch-offline() {
     mkdir ~\Downloads\YouTube\ > $null 2>&1
