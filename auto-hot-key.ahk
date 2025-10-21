@@ -186,6 +186,8 @@ sleep 250
 send {esc}
 return
 
+space & bs::send ^#c
+
 space & =::volume_up
 space & -::volume_down
 
