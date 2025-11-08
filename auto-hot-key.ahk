@@ -56,8 +56,9 @@ return
 #`;::send #{;}
 #ifwinactive
 
-#ifwinactive ahk_exe firefox.exe
-^o::^+a
+#ifwinactive ahk_exe chrome.exe
+^o::send ^+a
+!t::send !+c
 !w::send ^{pgup}
 !s::send ^{pgdn}
 
@@ -155,35 +156,37 @@ tab & 4::run, "f:\Sound"
 
 tab::tab
 
-
 space & [::
 send ^#v
-sleep 250
+sleep 175
 send {enter}
-sleep 250
+sleep 175
 send {esc}
+sleep 175
 return
 
 space & ]::
 send ^#v
-sleep 250
+sleep 175
 send {down}
-sleep 250
+sleep 175
 send {enter}
-sleep 250
+sleep 175
 send {esc}
+sleep 175
 return
 
 space & \::
 send ^#v
-sleep 250
+sleep 175
 send {down}
-sleep 250
+sleep 175
 send {down}
-sleep 250
+sleep 175
 send {enter}
-sleep 250
+sleep 175
 send {esc}
+sleep 175
 return
 
 space & bs::send ^#c
