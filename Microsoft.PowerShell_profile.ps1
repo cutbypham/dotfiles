@@ -2,6 +2,11 @@ Set-PSReadLineOption -EditMode vi
 
 $env:EDITOR = 'nvim'
 
+function Restart-Explorer {
+    Stop-Process -ProcessName explorer -Force
+    Start-Process explorer.exe
+}
+
 function dji {
     $proxyPath = ".\proxy"
 
@@ -141,6 +146,7 @@ function which ($command) {
 function update() {
     winget upgrade --all
     update-dotfiles
+    yt-dlp -U
 }
 
 function download-video( ) {
