@@ -129,6 +129,7 @@ vim.keymap.set("n", "<leader>h", "<C-w>v:e %:h<enter>", { silent = true })
 vim.api.nvim_command [[command! -nargs=0 CopyFullFilePath let @+ = expand('%:p')]]
 vim.api.nvim_command [[command! -nargs=0 EditNeovimConfig edit C:\Users\master\AppData\Local\nvim\init.lua]]
 vim.api.nvim_command [[command! -nargs=0 EditPowerShellConfig edit C:\Users\master\Documents\PowerShell\Microsoft.PowerShell_profile.ps1]]
+vim.api.nvim_command [[command! -nargs=0 EditNote edit C:\Users\master\Documents\note.txt]]
 vim.api.nvim_command [[command! -nargs=0 EditWindowsTerminalConfig edit C:\Users\master\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json]]
 vim.api.nvim_command [[command! -nargs=0 EditDataSync edit C:\Users\master\repos\dotfiles\sync-data.ps1]]
 vim.api.nvim_command [[command! -nargs=0 EditAutoHotkey edit C:\Users\master\repos\dotfiles\auto-hot-key.ahk]]
