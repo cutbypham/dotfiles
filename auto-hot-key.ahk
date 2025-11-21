@@ -154,45 +154,32 @@ tab & 2::run, "e:\obs\"
 tab & 3::run, "c:\users\master\"
 tab & 4::run, "f:\Sound"
 
+tab & wheeldown::volume_up
+tab & wheelup::volume_down
+tab & =::volume_up
+tab & -::volume_down
+
+tab & ]::
+send ^#v
+sleep 175
+send {enter}
+sleep 175
+send {esc}
+return
+
+tab & \::
+send ^#v
+sleep 175
+send {down}
+sleep 175
+send {enter}
+sleep 175
+send {esc}
+return
+
 tab::tab
 
-space & [::
-send ^#v
-sleep 175
-send {enter}
-sleep 175
-send {esc}
-sleep 175
-return
-
-space & ]::
-send ^#v
-sleep 175
-send {down}
-sleep 175
-send {enter}
-sleep 175
-send {esc}
-sleep 175
-return
-
-space & \::
-send ^#v
-sleep 175
-send {down}
-sleep 175
-send {down}
-sleep 175
-send {enter}
-sleep 175
-send {esc}
-sleep 175
-return
-
 space & bs::send ^#c
-
-space & =::volume_up
-space & -::volume_down
 
 space & a::^#1
 space & s::^#2
@@ -213,9 +200,6 @@ space & rbutton::RButton
 space & f13::bs
 space & g::delete
 
-space & wheeldown::volume_up
-space & wheelup::volume_down
-
 space & i::home
 space & o::end
 
@@ -223,11 +207,6 @@ space & k::up
 space & j::down
 space & l::right
 space & h::left
-
-space & tab::
-send {mbutton}
-send !{f4}
-return
 
 space & esc::
 send {mbutton}
