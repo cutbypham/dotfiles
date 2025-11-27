@@ -161,19 +161,19 @@ tab & -::volume_down
 
 tab & ]::
 send ^#v
-sleep 175
+sleep 250
 send {enter}
-sleep 175
+sleep 250
 send {esc}
 return
 
 tab & \::
 send ^#v
-sleep 175
+sleep 250
 send {down}
-sleep 175
+sleep 250
 send {enter}
-sleep 175
+sleep 250
 send {esc}
 return
 
@@ -208,9 +208,9 @@ space & j::down
 space & l::right
 space & h::left
 
-space & esc::
+space & tab::
 send {mbutton}
-send ^!{f4}
+send !{f4}
 return
 
 space & 0::reload
