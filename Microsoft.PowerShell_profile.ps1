@@ -144,9 +144,8 @@ function which ($command) {
 }
 
 function update() {
-    winget upgrade --all
+    winget upgrade --all --force
     update-dotfiles
-    yt-dlp -U
 }
 
 function download-video( ) {
