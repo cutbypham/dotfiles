@@ -61,12 +61,8 @@
     "keybindings": 
     [
         {
-            "id": "User.copy.644BA8F2",
-            "keys": "ctrl+c"
-        },
-        {
             "id": null,
-            "keys": "ctrl+shift+tab"
+            "keys": "ctrl+tab"
         },
         {
             "id": null,
@@ -74,15 +70,19 @@
         },
         {
             "id": null,
-            "keys": "ctrl+tab"
+            "keys": "ctrl+shift+tab"
         },
         {
-            "id": null,
-            "keys": "ctrl+v"
+            "id": "User.copy.644BA8F2",
+            "keys": "ctrl+c"
         },
         {
             "id": "User.find",
             "keys": "ctrl+shift+f"
+        },
+        {
+            "id": null,
+            "keys": "ctrl+v"
         },
         {
             "id": null,
@@ -137,6 +137,7 @@
                 "name": "Command Prompt"
             },
             {
+                "commandline": "\"C:\\Program Files\\PowerShell\\7\\pwsh.exe\" -nologo",
                 "font": 
                 {
                     "face": "JetBrains Mono NL",
