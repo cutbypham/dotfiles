@@ -1,4 +1,4 @@
-;#KeyHistory
+#KeyHistory
 #Persistent
 #noenv
 #singleinstance force
@@ -27,6 +27,18 @@ Send ^a
 return
 !f::
 send !{backspace}
+return
+!a::
+send {left}
+return
+!s::
+send {down}
+return
+!w::
+send {up}
+return
+!d::
+send {right}
 return
 #ifwinactive
 
@@ -57,6 +69,7 @@ return
 #ifwinactive
 
 #ifwinactive ahk_exe chrome.exe
+numpadenter::send !{left}
 ^o::send ^+a
 !t::send !+c
 !w::send ^{pgup}
@@ -149,10 +162,11 @@ togglemaxwindow()
 
 tab & e::run, "f:\projects\"
 tab & w::run, "c:\users\master\downloads\"
-tab & r::run, "e:\render\"
-tab & 2::run, "e:\obs\"
+tab & r::run, "d:\render\"
+tab & 2::run, "d:\obs\"
 tab & 3::run, "c:\users\master\"
 tab & 4::run, "f:\Sound"
+tab & f::run, "F:\resource"
 
 tab & wheeldown::volume_up
 tab & wheelup::volume_down
@@ -187,6 +201,8 @@ space & d::^#3
 space & f::^#4
 space & q::^#5
 space & w::^#6
+space & e::^#7
+space & r::^#8
 
 space & v::^!v
 
