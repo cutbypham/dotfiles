@@ -13,6 +13,11 @@ CoordMode, Mouse, Screen
 
 #o::suspend
 
+ins::
+CoordMode, Mouse, Screen
+MouseMove, % A_ScreenWidth // 2, % A_ScreenHeight // 2, 0
+return
+
 #ifwinactive, ahk_exe onecommander.exe
 !s::send ^{tab}
 !w::send ^+{tab}
@@ -204,6 +209,21 @@ space & w::^#6
 space & e::^#7
 space & r::^#8
 
+space & 1::send {f1}
+space & 2::send {f2}
+space & 3::send {f3}
+space & 4::send {f4}
+space & 5::send {f5}
+space & 6::send {f6}
+space & 7::send {f7}
+space & 8::send {f8}
+space & 9::send {f9}
+space & 0::send {f10}
+space & -::send {f11}
+space & =::send {f12}
+
+space & esc::reload
+
 space & v::^!v
 
 space & u::pgup
@@ -228,8 +248,6 @@ space & tab::
 send {mbutton}
 send !{f4}
 return
-
-space & 0::reload
 
 space::send  {space}
 +space::send +{space}
