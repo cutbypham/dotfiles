@@ -149,13 +149,13 @@ function update() {
 }
 
 function download-video( ) {
-    yt-dlp -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4' $args
+    yt-dlp --cookies-from-browser firefox -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4' $args
 }
 Set-Alias dv download-video
 Set-Alias y yt-dlp
 
 function download-audio() {
-    yt-dlp --extract-audio --continue --add-metadata --embed-thumbnail --audio-format mp3 --audio-quality 0 --metadata-from-title="%(artist)s - %(title)s" "$args"
+    yt-dlp --cookies-from-browser firefox --extract-audio --continue --add-metadata --embed-thumbnail --audio-format mp3 --audio-quality 0 --metadata-from-title="%(artist)s - %(title)s" "$args"
 }
 Set-Alias da download-audio
 
@@ -165,7 +165,7 @@ function download-thumbnail() {
 Set-Alias dt download-thumbnail
 
 function download-music() {
-    yt-dlp --cookies-from-browser firefox --download-archive archive.txt --extract-audio --audio-format mp3 --embed-thumbnail --embed-metadata --add-metadata -o "%(title)s.%(ext)s" "$args"
+    yt-dlp --download-archive archive.txt --extract-audio --audio-format mp3 --embed-thumbnail --embed-metadata --add-metadata -o "%(title)s.%(ext)s" "$args"
 }
 Set-Alias dm download-music
 
