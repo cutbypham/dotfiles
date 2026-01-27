@@ -133,7 +133,6 @@ vim.api.nvim_command [[command! -nargs=0 EditNote edit C:\Users\master\Documents
 vim.api.nvim_command [[command! -nargs=0 EditWindowsTerminalConfig edit C:\Users\master\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json]]
 vim.api.nvim_command [[command! -nargs=0 EditDataSync edit C:\Users\master\repos\dotfiles\sync-data.ps1]]
 vim.api.nvim_command [[command! -nargs=0 EditAutoHotkey edit C:\Users\master\repos\dotfiles\auto-hot-key.ahk]]
-vim.api.nvim_command [[command! -nargs=0 EditAutoHotkeySnippets edit C:\Users\master\repos\dotfiles\lib\snippets.ahk]]
 vim.api.nvim_command [[command! -nargs=0 EditFirefoxProfile edit C:\Users\master\AppData\Roaming\Mozilla\Firefox\Profiles\3wr0grx7.default-release\user.js]]
 vim.api.nvim_command [[command! -nargs=0 EditRSS edit C:\Users\master\repos\rss-to-email-once-a-day\src\feeds.ts]]
 

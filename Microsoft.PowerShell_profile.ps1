@@ -7,27 +7,6 @@ function Restart-Explorer {
     Start-Process explorer.exe
 }
 
-function dji {
-    $proxyPath = ".\proxy"
-
-    # Check if "proxy" folder exists; if not, create it
-    if (-not (Test-Path -Path $proxyPath)) {
-        New-Item -ItemType Directory -Path $proxyPath
-    }
-
-    # Get all .LRF files in the current directory
-    $lrfFiles = Get-ChildItem -Path . -Filter *.LRF
-
-    foreach ($file in $lrfFiles) {
-        # Define new file name with .mp4 extension
-        $newName = [System.IO.Path]::ChangeExtension($file.Name, ".mp4")
-
-        # Move and rename file to proxy folder
-        Move-Item -Path $file.FullName -Destination (Join-Path -Path $proxyPath -ChildPath $newName)
-    }
-    exit
-}
-
 function v() {
     nvim .
 }
