@@ -13,7 +13,7 @@ CoordMode, Mouse, Screen
 
 #o::suspend
 
-ins::
+$ins::
 CoordMode, Mouse, Screen
 MouseMove, % A_ScreenWidth // 2, % A_ScreenHeight // 2, 0
 return
@@ -21,7 +21,11 @@ return
 #ifwinactive, ahk_exe onecommander.exe
 !s::send ^{tab}
 !w::send ^+{tab}
-^e::send {f2}
+^e::send {f2}Sononym
+#ifwinactive
+
+#ifwinactive, ahk_exe obsidian.exe
+numpadenter::send +1
 #ifwinactive
 
 #ifwinactive, ahk_exe Sononym.exe
