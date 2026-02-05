@@ -21,7 +21,7 @@ return
 #ifwinactive, ahk_exe onecommander.exe
 !s::send ^{tab}
 !w::send ^+{tab}
-^e::send {f2}Sononym
+^e::send {f2}
 #ifwinactive
 
 #ifwinactive, ahk_exe obsidian.exe
