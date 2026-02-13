@@ -13,11 +13,6 @@ CoordMode, Mouse, Screen
 
 #o::suspend
 
-$ins::
-CoordMode, Mouse, Screen
-MouseMove, % A_ScreenWidth // 2, % A_ScreenHeight // 2, 0
-return
-
 #ifwinactive, ahk_exe onecommander.exe
 !s::send ^{tab}
 !w::send ^+{tab}
@@ -92,7 +87,7 @@ numpadenter::send !{left}
 !w::send ^{pgup}
 !s::send ^{pgdn}
 
-f13::^+t
+ins::^+t
 #ifwinactive
 
 movingwindowtootherdisplay() {
@@ -232,12 +227,11 @@ space & v::^!v
 
 space & u::pgup
 space & p::pgdn
-
 space & z::movingwindowtootherdisplay()
 
 space & rbutton::RButton
 
-space & f13::bs
+space & ins::bs
 space & g::delete
 
 space & i::home
