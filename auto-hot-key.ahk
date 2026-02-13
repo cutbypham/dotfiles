@@ -177,8 +177,8 @@ tab & 3::run, "c:\users\master\"
 tab & 4::run, "f:\Sound"
 tab & f::run, "F:\resource"
 
-tab & wheeldown::volume_up
-tab & wheelup::volume_down
+tab & wheeldown::volume_down
+tab & wheelup::volume_up
 tab & =::volume_up
 tab & -::volume_down
 
