@@ -166,11 +166,11 @@ togglemaxwindow()
 
 tab & e::run, "f:\projects\"
 tab & w::run, "c:\users\master\downloads\"
-tab & r::run, "d:\render\"
-tab & 2::run, "d:\obs\"
+tab & r::run, "e:\render\"
+tab & 2::run, "e:\obs\"
 tab & 3::run, "c:\users\master\"
 tab & 4::run, "f:\Sound"
-tab & f::run, "F:\resource"
+tab & f::run, "f:\resource"
 
 tab & wheeldown::volume_down
 tab & wheelup::volume_up
