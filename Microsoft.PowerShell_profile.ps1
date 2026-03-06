@@ -128,13 +128,13 @@ function update() {
 }
 
 function download-video( ) {
-    yt-dlp --cookies-from-browser firefox -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4' $args
+    yt-dlp -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4' $args
 }
 Set-Alias dv download-video
 Set-Alias y yt-dlp
 
 function download-audio() {
-    yt-dlp --cookies-from-browser firefox --extract-audio --continue --add-metadata --embed-thumbnail --audio-format mp3 --audio-quality 0 --metadata-from-title="%(artist)s - %(title)s" "$args"
+    yt-dlp --extract-audio --continue --add-metadata --embed-thumbnail --audio-format mp3 --audio-quality 0 --metadata-from-title="%(artist)s - %(title)s" "$args"
 }
 Set-Alias da download-audio
 
