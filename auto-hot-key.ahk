@@ -12,6 +12,10 @@ setworkingdir %a_scriptdir%
 CoordMode, Mouse, Screen
 
 #o::suspend
+ 
+;GamePad
+NumpadIns::send #{tab}
+NumpadEnd::send {mbutton}
 
 #ifwinactive, ahk_exe onecommander.exe
 !s::send ^{tab}
@@ -74,6 +78,7 @@ return
 
 #ifwinactive ahk_exe chrome.exe
 numpadenter::send !{left}
+ins::send !{left}
 ^o::send ^+a
 !t::send !+c
 !w::send ^{pgup}
