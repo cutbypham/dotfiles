@@ -15,9 +15,26 @@ CoordMode, Mouse, Screen
 
 space & t::send {end}
 
-$home::Send #{Tab}
-$end::Send #{Tab}
- 
+#ifwinactive, ahk_exe resolve.exe
+$f8::send w
+$f7::send q
+$f6::send a
+$f5::
+send +v
+sleep 50
+send {del}
+return
+$f9::
+send +v
+sleep 50
+send p
+sleep 200
+send {esc}
+return
+$pgdn::Send +{k}
+$pgup::Send ^{z}
+#ifwinactive
+
 #ifwinactive, ahk_exe onecommander.exe
 !s::send ^{tab}
 !w::send ^+{tab}
