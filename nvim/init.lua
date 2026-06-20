@@ -129,12 +129,7 @@ vim.keymap.set("n", "<leader>h", "<C-w>v:e %:h<enter>", { silent = true })
 vim.api.nvim_command [[command! -nargs=0 CopyFullFilePath let @+ = expand('%:p')]]
 vim.api.nvim_command [[command! -nargs=0 EditNeovimConfig edit C:\Users\master\AppData\Local\nvim\init.lua]]
 vim.api.nvim_command [[command! -nargs=0 EditPowerShellConfig edit C:\Users\master\Documents\PowerShell\Microsoft.PowerShell_profile.ps1]]
-vim.api.nvim_command [[command! -nargs=0 EditNote edit C:\Users\master\Documents\note.txt]]
-vim.api.nvim_command [[command! -nargs=0 EditWindowsTerminalConfig edit C:\Users\master\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json]]
-vim.api.nvim_command [[command! -nargs=0 EditDataSync edit C:\Users\master\repos\dotfiles\sync-data.ps1]]
-vim.api.nvim_command [[command! -nargs=0 EditAutoHotkey edit C:\Users\master\repos\dotfiles\auto-hot-key.ahk]]
-vim.api.nvim_command [[command! -nargs=0 EditFirefoxProfile edit C:\Users\master\AppData\Roaming\Mozilla\Firefox\Profiles\3wr0grx7.default-release\user.js]]
-vim.api.nvim_command [[command! -nargs=0 EditRSS edit C:\Users\master\repos\rss-to-email-once-a-day\src\feeds.ts]]
+vim.api.nvim_command [[command! -nargs=0 EditAutoHotkey edit C:\Users\master\My Drive (cutbypham@gmail.com)\Docs\startup.ahk]]
 
 local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
 
