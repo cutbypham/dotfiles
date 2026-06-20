@@ -61,8 +61,12 @@
     "keybindings": 
     [
         {
+            "id": "User.copy.644BA8F2",
+            "keys": "ctrl+c"
+        },
+        {
             "id": null,
-            "keys": "ctrl+tab"
+            "keys": "ctrl+shift+tab"
         },
         {
             "id": null,
@@ -70,11 +74,11 @@
         },
         {
             "id": null,
-            "keys": "ctrl+shift+tab"
+            "keys": "ctrl+tab"
         },
         {
-            "id": "User.copy.644BA8F2",
-            "keys": "ctrl+c"
+            "id": null,
+            "keys": "ctrl+v"
         },
         {
             "id": "User.find",
@@ -82,11 +86,11 @@
         },
         {
             "id": null,
-            "keys": "ctrl+v"
+            "keys": "alt+shift+d"
         },
         {
             "id": null,
-            "keys": "alt+shift+d"
+            "keys": "alt+down"
         },
         {
             "id": "User.duplicateTab",
@@ -101,12 +105,48 @@
             "keys": "alt+/"
         },
         {
-            "id": "User.nextTab.0",
-            "keys": "ctrl+pgdn"
+            "id": "Terminal.MoveFocusPrevious",
+            "keys": "alt+o"
+        },
+        {
+            "id": null,
+            "keys": "ctrl+alt+left"
+        },
+        {
+            "id": "Terminal.MoveFocusLeft",
+            "keys": "alt+h"
+        },
+        {
+            "id": null,
+            "keys": "alt+left"
+        },
+        {
+            "id": "Terminal.MoveFocusDown",
+            "keys": "alt+j"
+        },
+        {
+            "id": "Terminal.MoveFocusRight",
+            "keys": "alt+l"
+        },
+        {
+            "id": null,
+            "keys": "alt+right"
+        },
+        {
+            "id": "Terminal.MoveFocusUp",
+            "keys": "alt+k"
+        },
+        {
+            "id": null,
+            "keys": "alt+up"
         },
         {
             "id": "User.prevTab.0",
-            "keys": "ctrl+pgup"
+            "keys": "alt+w"
+        },
+        {
+            "id": "User.nextTab.0",
+            "keys": "alt+s"
         }
     ],
     "launchMode": "maximized",
@@ -120,7 +160,12 @@
     {
         "defaults": 
         {
-            "colorScheme": "Github Light"
+            "colorScheme": "Github Light",
+            "font": 
+            {
+                "face": "JetBrains Mono",
+                "size": 13
+            }
         },
         "list": 
         [
@@ -141,7 +186,7 @@
                 "font": 
                 {
                     "face": "JetBrains Mono NL",
-                    "size": 11
+                    "size": 14
                 },
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
                 "hidden": false,
